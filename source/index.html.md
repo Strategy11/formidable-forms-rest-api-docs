@@ -7,7 +7,7 @@ language_tabs:
   - javascript: Javascript
 
 toc_footers:
-  - <a href="https://github.com/Strategy11/formidable-forms-rest-api-docs">Contributing to Formidable REST API Docs</a>
+  - <a href="https://github.com/Strategy11/formidable-forms-rest-api-docs">Contributing to Formidable API Docs</a>
   - <a href="https://formidableforms.com/knowledgebase">Formidable Forms Documentation</a>
   - <a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a>
 
