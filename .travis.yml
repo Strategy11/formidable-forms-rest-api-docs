@@ -1,0 +1,17 @@
+sudo: false
+
+language: ruby
+
+rvm:
+  - 2.4.0
+
+cache: bundler
+script: bundle exec middleman build
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  after_success: "bash ./deploy.sh"
+  github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
+  on:
+    branch: master
