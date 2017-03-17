@@ -8,8 +8,7 @@ rvm:
 deploy:
   provider: pages
   skip_cleanup: true
-  cache: bundler
-  script: bundle exec middleman build
+  script: bash ./deploy.sh
   github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
   on:
     branch: master
