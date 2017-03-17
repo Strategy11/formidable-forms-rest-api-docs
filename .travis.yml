@@ -1,11 +1,7 @@
-sudo: false
-
-language: ruby
-
-rvm:
-  - 2.4.0
-
-script: bash ./deploy.sh
-env:
-  global:
-  - GIT_DEPLOY_EMAIL: "deploy@travis-ci.org"
+deploy:
+  provider: script
+  script: deploy.sh
+  on:
+    branch: master
+  GIT_DEPLOY_EMAIL: "deploy@travis-ci.org"
+  github_token: $GITHUB_TOKEN
