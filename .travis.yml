@@ -6,3 +6,6 @@ rvm:
   - 2.4.0
 
 script: bash ./deploy.sh
+env:
+  global:
+  - GIT_DEPLOY_EMAIL: "deploy@travis-ci.org"
