@@ -6,8 +6,7 @@ rvm:
   - 2.4.0
 
 cache: bundler
-script: bundle exec middleman build
-after_success: ./deploy.sh
+script: ./deploy.sh
 env:  
   global:
     - secure: $GITHUB_TOKEN
