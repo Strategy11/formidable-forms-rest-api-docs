@@ -10,4 +10,4 @@ script: bundle exec middleman build
 after_success: ./deploy.sh
 env:  
   global:
-    - secure:: $GITHUB_TOKEN
+    - secure: $GITHUB_TOKEN
