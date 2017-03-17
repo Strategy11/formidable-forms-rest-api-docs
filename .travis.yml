@@ -5,6 +5,9 @@ language: ruby
 rvm:
   - 2.4.0
 
+cache: bundler
+script: bundle exec middleman build
+
 deploy:
   provider: script
   script: deploy.sh
