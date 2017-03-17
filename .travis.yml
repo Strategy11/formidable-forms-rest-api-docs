@@ -13,5 +13,4 @@ deploy:
   script: deploy.sh
   on:
     branch: master
-  GIT_DEPLOY_EMAIL: "deploy@travis-ci.org"
   github_token: $GITHUB_TOKEN
