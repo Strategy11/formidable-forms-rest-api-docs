@@ -329,6 +329,90 @@
 
 <p>Almost all endpoints accept optional parameters which can be passed as a HTTP query string parameter, e.g. <code class="prettyprint">GET /entries?search=Test</code>. All parameters are documented along each endpoint.</p>
 
+          <h1 id="forms">Forms</h1>
+
+<h2 id="get-all-forms">Get All forms</h2>
+
+<p>This endpoint retrieves an array of all forms.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET http://example.com/wp-json/frm/v2/forms</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>limit</td>
+<td>20</td>
+<td>Limit the number of forms returned</td>
+</tr>
+<tr>
+<td>order</td>
+<td>ASC</td>
+<td>Use ASC or DESC</td>
+</tr>
+<tr>
+<td>order_by</td>
+<td>created_at</td>
+<td>Order the entries by id, created_at, updated_at, form_id</td>
+</tr>
+<tr>
+<td>page</td>
+<td>1</td>
+<td>The page number to retrieve.</td>
+</tr>
+<tr>
+<td>page_size</td>
+<td>10</td>
+<td>Change the number of forms returned per page</td>
+</tr>
+<tr>
+<td>return</td>
+<td>array</td>
+<td>Unknown</td>
+</tr>
+<tr>
+<td>search</td>
+<td>&ldquo;</td>
+<td>Search all fields in the entries for a value.</td>
+</tr>
+</tbody></table>
+
+<h3 id="pagination">Pagination</h3>
+
+<p>Requests that return multiple items will be paginated to 10 items by default. The items per page can be specified with the <code class="prettyprint">?page_size</code> parameter:</p>
+
+<p><code class="prettyprint">GET /forms?page_size=15</code></p>
+
+<p>You can specify further pages with the <code class="prettyprint">?page</code> parameter:</p>
+
+<p><code class="prettyprint">GET /forms?page=2</code></p>
+
+<h2 id="get-a-single-form">Get a Single Form</h2>
+
+<p>This endpoint gets a single form.</p>
+
+<p><code class="prettyprint">GET http://example.com/wp-json/frm/v2/forms/{formID}</code></p>
+
+<h2 id="create-a-form">Create a Form</h2>
+
+<p>This endpoint creates a single form.</p>
+
+<p><code class="prettyprint">POST http://example.com/wp-json/frm/v2/forms/</code></p>
+
+<h2 id="delete-a-form">Delete a Form</h2>
+
+<p>This endpoint deletes a single form.</p>
+
+<p><code class="prettyprint">DELETE http://example.com/wp-json/frm/v2/forms/{formID}</code></p>
+
           <h1 id="entries">Entries</h1>
 
 <h2 id="get-all-entries">Get All Entries</h2>
