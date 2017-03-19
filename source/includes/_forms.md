@@ -1,6 +1,6 @@
 # Forms
 
-## Get All Forms
+## Get All forms
 
 This endpoint retrieves an array of all forms.
 
@@ -29,3 +29,21 @@ Requests that return multiple items will be paginated to 10 items by default. Th
 You can specify further pages with the `?page` parameter:
 
 `GET /forms?page=2`
+
+## Get a Single Form
+
+This endpoint gets a single form.
+
+`GET http://example.com/wp-json/frm/v2/forms/{formID}`
+
+## Create a Form
+
+This endpoint creates a single form.
+
+`POST http://example.com/wp-json/frm/v2/forms/`
+
+## Delete a Form
+
+This endpoint deletes a single form.
+
+`DELETE http://example.com/wp-json/frm/v2/forms/{formID}`
