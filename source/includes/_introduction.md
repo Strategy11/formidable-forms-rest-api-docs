@@ -11,6 +11,28 @@ To use the latest version of the REST API you must be using:
 * Pretty permalinks in Settings > Permalinks so that the custom endpoints are supported. Default permalinks will not work.
 * You may access the API over either HTTP or HTTPS, but HTTPS is recommended where possible.
 
+## Download and install
+1. Download the latest version of the [Formidable API add-on](https://formidableforms.com/downloads/formidable-api/).
+2. In your WordPress admin, go to 'Plugins' → 'Add New' and click the 'Upload Plugin' button at the top of the page.
+3. Upload the zip file you just downloaded in step two. Once the plugin is installed, click 'Activate Plugin' or go to the 'Plugins' page, find 'Formidable API' and click 'Activate'.
+
+## HTTP Methods
+
+### GET
+Make a GET request to retrieve data. GET requests will never cause an update or change to your data because they’re safe and [idempotent](https://developer.mozilla.org/en-US/docs/Glossary/idempotent).
+
+### POST
+Use a POST request to create new entries, forms, Views, or fields. POST can also be used to update an entry, form, View, or field.
+
+### PATCH
+Make a PATCH request to update an entry, form, View, or field. With PATCH requests, you only need to provide the data you want to change.
+
+### PUT
+Use a PUT request to create or update an entry, form, View, or field.
+
+### DELETE
+Make a DELETE request to delete an entry, form, View, or field.
+
 ## Request/Response Format ##
 
 The default response format is JSON. Requests with a message-body use plain JSON to set or update resource attributes. Successful requests will return a `200 OK` HTTP status.
