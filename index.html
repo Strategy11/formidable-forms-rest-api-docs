@@ -408,56 +408,54 @@
 <p><code class="prettyprint">POST http://example.com/wp-json/frm/v2/forms/</code></p>
 
 <blockquote>
-<p>The above command returns the following JSON.
-<code class="prettyprint">javascript
-{
-    &quot;id&quot;: &quot;568&quot;,
-    &quot;form_key&quot;: &quot;65ukw&quot;,
-    &quot;name&quot;: &quot;&quot;,
-    &quot;description&quot;: &quot;&quot;,
-    &quot;status&quot;: &quot;draft&quot;,
-    &quot;parent_form_id&quot;: &quot;0&quot;,
-    &quot;logged_in&quot;: &quot;0&quot;,
-    &quot;is_template&quot;: &quot;0&quot;,
-    &quot;options&quot;: {
-        &quot;submit_value&quot;: &quot;Submit&quot;,
-        &quot;success_action&quot;: &quot;message&quot;,
-        &quot;success_msg&quot;: &quot;Your responses were successfully submitted. Thank you!&quot;,
-        &quot;show_form&quot;: 0,
-        &quot;akismet&quot;: &quot;&quot;,
-        &quot;no_save&quot;: 0,
-        &quot;ajax_load&quot;: 0,
-        &quot;form_class&quot;: &quot;&quot;,
-        &quot;custom_style&quot;: 1,
-        &quot;before_html&quot;: &quot;&lt;legend class=\&quot;frm_hidden\&quot;&gt;[form_name]&lt;/legend&gt;\n[if form_name]&lt;h3 class=\&quot;frm_form_title\&quot;&gt;[form_name]&lt;/h3&gt;[/if form_name]\n[if form_description]&lt;div class=\&quot;frm_description\&quot;&gt;[form_description]&lt;/div&gt;[/if form_description]&quot;,
-        &quot;after_html&quot;: &quot;&quot;,
-        &quot;submit_html&quot;: &quot;&lt;div class=\&quot;frm_submit\&quot;&gt;\n[if back_button]&lt;button type=\&quot;submit\&quot; name=\&quot;frm_prev_page\&quot; formnovalidate=\&quot;formnovalidate\&quot; class=\&quot;frm_prev_page\&quot; [back_hook]&gt;[back_label]&lt;/button&gt;[/if back_button]\n&lt;button class=\&quot;frm_button_submit\&quot; type=\&quot;submit\&quot;  [button_action]&gt;[button_label]&lt;/button&gt;\n[if save_draft]&lt;a href=\&quot;#\&quot; class=\&quot;frm_save_draft\&quot; [draft_hook]&gt;[draft_label]&lt;/a&gt;[/if save_draft]\n&lt;/div&gt;&quot;
-    },
-    &quot;editable&quot;: &quot;0&quot;,
-    &quot;created_at&quot;: &quot;2017-05-20 04:47:56&quot;,
-    &quot;link&quot;: &quot;http://localhost:8888/wordpress/wp-admin/admin-ajax.php?action=frm_forms_preview&amp;#038;form=65ukw&quot;,
-    &quot;_links&quot;: {
-        &quot;self&quot;: [
-            {
-                &quot;href&quot;: &quot;http://localhost:8888/wordpress/wp-json/frm/v2/forms/568&quot;
-            }
-        ],
-        &quot;collection&quot;: [
-            {
-                &quot;href&quot;: &quot;http://localhost:8888/wordpress/wp-json/frm/v2/forms&quot;
-            }
-        ],
-        &quot;fields&quot;: [
-            {
-                &quot;embeddable&quot;: true,
-                &quot;href&quot;: &quot;http://localhost:8888/wordpress/wp-json/frm/v2/forms/568/fields&quot;
-            }
-        ]
-    }
-}
-</code></p>
+<p>The above command returns the following JSON.</p>
 </blockquote>
-
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"568"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"form_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"65ukw"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"draft"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"parent_form_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"logged_in"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"is_template"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"submit_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Submit"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"success_action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"message"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"success_msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Your responses were successfully submitted. Thank you!"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"show_form"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"akismet"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"no_save"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ajax_load"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"form_class"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"custom_style"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"before_html"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;legend class=</span><span class="se">\"</span><span class="s2">frm_hidden</span><span class="se">\"</span><span class="s2">&gt;[form_name]&lt;/legend&gt;</span><span class="se">\n</span><span class="s2">[if form_name]&lt;h3 class=</span><span class="se">\"</span><span class="s2">frm_form_title</span><span class="se">\"</span><span class="s2">&gt;[form_name]&lt;/h3&gt;[/if form_name]</span><span class="se">\n</span><span class="s2">[if form_description]&lt;div class=</span><span class="se">\"</span><span class="s2">frm_description</span><span class="se">\"</span><span class="s2">&gt;[form_description]&lt;/div&gt;[/if form_description]"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"after_html"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"submit_html"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;div class=</span><span class="se">\"</span><span class="s2">frm_submit</span><span class="se">\"</span><span class="s2">&gt;</span><span class="se">\n</span><span class="s2">[if back_button]&lt;button type=</span><span class="se">\"</span><span class="s2">submit</span><span class="se">\"</span><span class="s2"> name=</span><span class="se">\"</span><span class="s2">frm_prev_page</span><span class="se">\"</span><span class="s2"> formnovalidate=</span><span class="se">\"</span><span class="s2">formnovalidate</span><span class="se">\"</span><span class="s2"> class=</span><span class="se">\"</span><span class="s2">frm_prev_page</span><span class="se">\"</span><span class="s2"> [back_hook]&gt;[back_label]&lt;/button&gt;[/if back_button]</span><span class="se">\n</span><span class="s2">&lt;button class=</span><span class="se">\"</span><span class="s2">frm_button_submit</span><span class="se">\"</span><span class="s2"> type=</span><span class="se">\"</span><span class="s2">submit</span><span class="se">\"</span><span class="s2">  [button_action]&gt;[button_label]&lt;/button&gt;</span><span class="se">\n</span><span class="s2">[if save_draft]&lt;a href=</span><span class="se">\"</span><span class="s2">#</span><span class="se">\"</span><span class="s2"> class=</span><span class="se">\"</span><span class="s2">frm_save_draft</span><span class="se">\"</span><span class="s2"> [draft_hook]&gt;[draft_label]&lt;/a&gt;[/if save_draft]</span><span class="se">\n</span><span class="s2">&lt;/div&gt;"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"editable"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-05-20 04:47:56"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:8888/wordpress/wp-admin/admin-ajax.php?action=frm_forms_preview&amp;#038;form=65ukw"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"_links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"self"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:8888/wordpress/wp-json/frm/v2/forms/568"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="s2">"collection"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:8888/wordpress/wp-json/frm/v2/forms"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="s2">"fields"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"embeddable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:8888/wordpress/wp-json/frm/v2/forms/568/fields"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 <h2 id="delete-a-form">Delete a Form</h2>
 
 <p>This endpoint deletes a single form.</p>
