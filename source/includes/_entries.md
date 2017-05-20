@@ -76,7 +76,7 @@ This endpoint retrieves a single entry using the Entry ID.
 
 ### HTTP Request
 
-`GET http://example.com/wp-json/frm/v2/entries/{entry_id}`
+`GET http://example.com/wp-json/frm/v2/entries/{entryID}`
 
 ## Create a single entry by Entry ID
 
@@ -84,7 +84,7 @@ This endpoint creates a single entry.
 
 ### HTTP Request
 
-`POST http://example.com/wp-json/frm/v2/entries/{entry_id}`
+`POST http://example.com/wp-json/frm/v2/entries/{entryID}`
 
 ## Update a single entry by Entry ID
 
@@ -92,8 +92,8 @@ These endpoints update a single entry.
 
 ### HTTP Request
 
-`POST http://example.com/wp-json/frm/v2/entries/{entry_id}`
+`POST http://example.com/wp-json/frm/v2/entries/{entryID}`
 
-`PUT http://example.com/wp-json/frm/v2/entries/{entry_id}`
+`PUT http://example.com/wp-json/frm/v2/entries/{entryID}`
 
-`PATCH http://example.com/wp-json/frm/v2/entries/{entry_id}`
+`PATCH http://example.com/wp-json/frm/v2/entries/{entryID}`
