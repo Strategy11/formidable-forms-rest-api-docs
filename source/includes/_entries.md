@@ -93,5 +93,7 @@ These endpoints update a single entry.
 ### HTTP Request
 
 `POST http://example.com/wp-json/frm/v2/entries/{entry_id}`
+
 `PUT http://example.com/wp-json/frm/v2/entries/{entry_id}`
+
 `PATCH http://example.com/wp-json/frm/v2/entries/{entry_id}`
