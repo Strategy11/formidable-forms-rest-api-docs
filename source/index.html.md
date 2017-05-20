@@ -14,6 +14,7 @@ toc_footers:
 includes:
   - introduction
   - forms
+  - fields
   - entries
 
 search: true
