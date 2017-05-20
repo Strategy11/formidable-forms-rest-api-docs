@@ -17,7 +17,7 @@ order | ASC | Use ASC or DESC
 order_by | created_at | Order the entries by id, created_at, updated_at, form_id
 page | 1 | The page number to retrieve.
 page_size | 10 | Change the number of forms returned per page
-return | array | Unknown
+return | array | Use ?return=html to return HTML instead of JSON
 search | '' | Search all fields in the entries for a value.
 
 ### Pagination
