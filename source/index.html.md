@@ -1,5 +1,5 @@
 ---
-title: API Reference
+title: Formidable Forms REST API Docs - v2
 
 language_tabs:
   - shell: cURL
@@ -12,10 +12,10 @@ toc_footers:
   - <a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a>
 
 includes:
-  - introduction
-  - forms
-  - fields
-  - entries
+  - v2/introduction
+  - v2/forms
+  - v2/fields
+  - v2/entries
 
 search: true
 ---
