@@ -407,6 +407,57 @@
 
 <p><code class="prettyprint">POST http://example.com/wp-json/frm/v2/forms/</code></p>
 
+<blockquote>
+<p>The above command returns the following JSON.
+<code class="prettyprint">javascript
+{
+    &quot;id&quot;: &quot;568&quot;,
+    &quot;form_key&quot;: &quot;65ukw&quot;,
+    &quot;name&quot;: &quot;&quot;,
+    &quot;description&quot;: &quot;&quot;,
+    &quot;status&quot;: &quot;draft&quot;,
+    &quot;parent_form_id&quot;: &quot;0&quot;,
+    &quot;logged_in&quot;: &quot;0&quot;,
+    &quot;is_template&quot;: &quot;0&quot;,
+    &quot;options&quot;: {
+        &quot;submit_value&quot;: &quot;Submit&quot;,
+        &quot;success_action&quot;: &quot;message&quot;,
+        &quot;success_msg&quot;: &quot;Your responses were successfully submitted. Thank you!&quot;,
+        &quot;show_form&quot;: 0,
+        &quot;akismet&quot;: &quot;&quot;,
+        &quot;no_save&quot;: 0,
+        &quot;ajax_load&quot;: 0,
+        &quot;form_class&quot;: &quot;&quot;,
+        &quot;custom_style&quot;: 1,
+        &quot;before_html&quot;: &quot;&lt;legend class=\&quot;frm_hidden\&quot;&gt;[form_name]&lt;/legend&gt;\n[if form_name]&lt;h3 class=\&quot;frm_form_title\&quot;&gt;[form_name]&lt;/h3&gt;[/if form_name]\n[if form_description]&lt;div class=\&quot;frm_description\&quot;&gt;[form_description]&lt;/div&gt;[/if form_description]&quot;,
+        &quot;after_html&quot;: &quot;&quot;,
+        &quot;submit_html&quot;: &quot;&lt;div class=\&quot;frm_submit\&quot;&gt;\n[if back_button]&lt;button type=\&quot;submit\&quot; name=\&quot;frm_prev_page\&quot; formnovalidate=\&quot;formnovalidate\&quot; class=\&quot;frm_prev_page\&quot; [back_hook]&gt;[back_label]&lt;/button&gt;[/if back_button]\n&lt;button class=\&quot;frm_button_submit\&quot; type=\&quot;submit\&quot;  [button_action]&gt;[button_label]&lt;/button&gt;\n[if save_draft]&lt;a href=\&quot;#\&quot; class=\&quot;frm_save_draft\&quot; [draft_hook]&gt;[draft_label]&lt;/a&gt;[/if save_draft]\n&lt;/div&gt;&quot;
+    },
+    &quot;editable&quot;: &quot;0&quot;,
+    &quot;created_at&quot;: &quot;2017-05-20 04:47:56&quot;,
+    &quot;link&quot;: &quot;http://localhost:8888/wordpress/wp-admin/admin-ajax.php?action=frm_forms_preview&amp;#038;form=65ukw&quot;,
+    &quot;_links&quot;: {
+        &quot;self&quot;: [
+            {
+                &quot;href&quot;: &quot;http://localhost:8888/wordpress/wp-json/frm/v2/forms/568&quot;
+            }
+        ],
+        &quot;collection&quot;: [
+            {
+                &quot;href&quot;: &quot;http://localhost:8888/wordpress/wp-json/frm/v2/forms&quot;
+            }
+        ],
+        &quot;fields&quot;: [
+            {
+                &quot;embeddable&quot;: true,
+                &quot;href&quot;: &quot;http://localhost:8888/wordpress/wp-json/frm/v2/forms/568/fields&quot;
+            }
+        ]
+    }
+}
+</code></p>
+</blockquote>
+
 <h2 id="delete-a-form">Delete a Form</h2>
 
 <p>This endpoint deletes a single form.</p>
