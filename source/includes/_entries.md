@@ -47,11 +47,17 @@ let kittens = api.kittens.get();
 
 Parameter | Default | Description
 --------- | ------- | -----------
-order_by | id | Order the entries by id, created_at, updated_at, form_id
-order | ASC | Use ASC or DESC
+form_id | 0 | Get all entries from a specific form
 page | 1 | The page number to retrieve.
 page_size | 25 | Change the number of entries returned
+order | ASC | Use ASC or DESC
+order_by | id | Order the entries by id, created_at, updated_at, form_id
 search | | Search all fields in the entries for a value.
+
+<aside class="notice">
+Instead of using GET http://example.com/wp-json/frm/v2/entries?form_id=1 to get all entries from a specific form, you could also use the following HTTP Request.
+</aside>
+`GET http://example.com/wp-json/frm/v2/forms/1/entries`
 
 ### Pagination
 
