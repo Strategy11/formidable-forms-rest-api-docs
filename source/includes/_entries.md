@@ -69,3 +69,29 @@ Requests that return multiple items will be paginated to 25 items by default. Th
 You can specify further pages with the `?page` parameter:
 
 `GET /entries?page=2`
+
+## Get a single entry by Entry ID
+
+This endpoint retrieves a single entry using the Entry ID.
+
+### HTTP Request
+
+`GET http://example.com/wp-json/frm/v2/entries/{entry_id}`
+
+## Create a single entry by Entry ID
+
+This endpoint creates a single entry.
+
+### HTTP Request
+
+`POST http://example.com/wp-json/frm/v2/entries/{entry_id}`
+
+## Update a single entry by Entry ID
+
+These endpoints update a single entry.
+
+### HTTP Request
+
+`POST http://example.com/wp-json/frm/v2/entries/{entry_id}`
+`PUT http://example.com/wp-json/frm/v2/entries/{entry_id}`
+`PATCH http://example.com/wp-json/frm/v2/entries/{entry_id}`
