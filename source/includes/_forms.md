@@ -38,11 +38,7 @@ This endpoint gets a single form.
 
 ## Create a Form
 
-This endpoint creates a single form.
-
-`POST http://example.com/wp-json/frm/v2/forms/`
-
->The above command returns the following JSON.
+>This endpoint returns the following JSON.
 
 ```json
 {
@@ -91,6 +87,10 @@ This endpoint creates a single form.
     }
 }
 ```
+
+This endpoint creates a single form.
+
+`POST http://example.com/wp-json/frm/v2/forms/`
 
 ## Delete a Form
 
