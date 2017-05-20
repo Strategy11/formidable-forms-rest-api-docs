@@ -43,7 +43,8 @@ This endpoint creates a single form.
 `POST http://example.com/wp-json/frm/v2/forms/`
 
 >The above command returns the following JSON.
-```javascript
+
+```json
 {
     "id": "568",
     "form_key": "65ukw",
