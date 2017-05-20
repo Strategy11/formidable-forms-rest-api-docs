@@ -510,14 +510,9 @@
 </tr>
 </thead><tbody>
 <tr>
-<td>order_by</td>
-<td>id</td>
-<td>Order the entries by id, created_at, updated_at, form_id</td>
-</tr>
-<tr>
-<td>order</td>
-<td>ASC</td>
-<td>Use ASC or DESC</td>
+<td>form_id</td>
+<td>0</td>
+<td>Get all entries from a specific form</td>
 </tr>
 <tr>
 <td>page</td>
@@ -530,11 +525,27 @@
 <td>Change the number of entries returned</td>
 </tr>
 <tr>
+<td>order</td>
+<td>ASC</td>
+<td>Use ASC or DESC</td>
+</tr>
+<tr>
+<td>order_by</td>
+<td>id</td>
+<td>Order the entries by id, created_at, updated_at, form_id</td>
+</tr>
+<tr>
 <td>search</td>
 <td></td>
 <td>Search all fields in the entries for a value.</td>
 </tr>
 </tbody></table>
+
+<aside class="notice">
+Instead of using GET http://example.com/wp-json/frm/v2/entries?form_id=1 to get all entries from a specific form, you could also use the following HTTP Request.
+</aside>
+
+<p><code class="prettyprint">GET http://example.com/wp-json/frm/v2/forms/1/entries</code></p>
 
 <h3 id="pagination">Pagination</h3>
 
