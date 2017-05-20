@@ -42,6 +42,55 @@ This endpoint creates a single form.
 
 `POST http://example.com/wp-json/frm/v2/forms/`
 
+>The above command returns the following JSON.
+```javascript
+{
+    "id": "568",
+    "form_key": "65ukw",
+    "name": "",
+    "description": "",
+    "status": "draft",
+    "parent_form_id": "0",
+    "logged_in": "0",
+    "is_template": "0",
+    "options": {
+        "submit_value": "Submit",
+        "success_action": "message",
+        "success_msg": "Your responses were successfully submitted. Thank you!",
+        "show_form": 0,
+        "akismet": "",
+        "no_save": 0,
+        "ajax_load": 0,
+        "form_class": "",
+        "custom_style": 1,
+        "before_html": "<legend class=\"frm_hidden\">[form_name]</legend>\n[if form_name]<h3 class=\"frm_form_title\">[form_name]</h3>[/if form_name]\n[if form_description]<div class=\"frm_description\">[form_description]</div>[/if form_description]",
+        "after_html": "",
+        "submit_html": "<div class=\"frm_submit\">\n[if back_button]<button type=\"submit\" name=\"frm_prev_page\" formnovalidate=\"formnovalidate\" class=\"frm_prev_page\" [back_hook]>[back_label]</button>[/if back_button]\n<button class=\"frm_button_submit\" type=\"submit\"  [button_action]>[button_label]</button>\n[if save_draft]<a href=\"#\" class=\"frm_save_draft\" [draft_hook]>[draft_label]</a>[/if save_draft]\n</div>"
+    },
+    "editable": "0",
+    "created_at": "2017-05-20 04:47:56",
+    "link": "http://localhost:8888/wordpress/wp-admin/admin-ajax.php?action=frm_forms_preview&#038;form=65ukw",
+    "_links": {
+        "self": [
+            {
+                "href": "http://localhost:8888/wordpress/wp-json/frm/v2/forms/568"
+            }
+        ],
+        "collection": [
+            {
+                "href": "http://localhost:8888/wordpress/wp-json/frm/v2/forms"
+            }
+        ],
+        "fields": [
+            {
+                "embeddable": true,
+                "href": "http://localhost:8888/wordpress/wp-json/frm/v2/forms/568/fields"
+            }
+        ]
+    }
+}
+```
+
 ## Delete a Form
 
 This endpoint deletes a single form.
