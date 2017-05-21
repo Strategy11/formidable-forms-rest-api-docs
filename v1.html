@@ -230,6 +230,105 @@
       <div class="dark-box"></div>
       <div class="content">
         
+          <h1 id="introduction">Introduction</h1>
+
+<p>Welcome to the Formidable Forms API official documentation! The Formidable Forms API is fully integrated with the WordPress <a href="http://en.wikipedia.org/wiki/Representational_State_Transfer">REST</a> API. This allows Formidable data to be created, read, updated, and deleted using requests in JSON format and using WordPress REST API Authentication methods and standard HTTP verbs which are understood by most HTTP clients.</p>
+
+<h2 id="requirements">Requirements</h2>
+
+<p>To use the latest version of the REST API you must be using:</p>
+
+<ul>
+<li>Formidable 2.0+</li>
+<li>Formidable API 1.0+</li>
+<li>WordPress 4.4+</li>
+<li>Pretty permalinks in Settings &gt; Permalinks so that the custom endpoints are supported. Default permalinks will not work.</li>
+<li>You may access the API over either HTTP or HTTPS, but HTTPS is recommended where possible.</li>
+</ul>
+
+<h2 id="download-and-install">Download and install</h2>
+
+<ol>
+<li>Download the latest version of the <a href="https://formidableforms.com/downloads/formidable-api/">Formidable API add-on</a>.</li>
+<li>In your WordPress admin, go to &lsquo;Plugins&rsquo; → &lsquo;Add New&rsquo; and click the &lsquo;Upload Plugin&rsquo; button at the top of the page.</li>
+<li>Upload the zip file you just downloaded in step two. Once the plugin is installed, click &lsquo;Activate Plugin&rsquo; or go to the &lsquo;Plugins&rsquo; page, find &lsquo;Formidable API&rsquo; and click &lsquo;Activate&rsquo;.</li>
+</ol>
+
+<h2 id="http-methods">HTTP Methods</h2>
+
+<h3 id="get">GET</h3>
+
+<p>Make a GET request to retrieve data. GET requests will never cause an update or change to your data because they’re safe and <a href="https://developer.mozilla.org/en-US/docs/Glossary/idempotent">idempotent</a>.</p>
+
+<h3 id="post">POST</h3>
+
+<p>Use a POST request to create new entries, forms, Views, or fields. POST can also be used to update an entry, form, View, or field.</p>
+
+<h3 id="patch">PATCH</h3>
+
+<p>Make a PATCH request to update an entry, form, View, or field. With PATCH requests, you only need to provide the data you want to change.</p>
+
+<h3 id="put">PUT</h3>
+
+<p>Use a PUT request to create or update an entry, form, View, or field.</p>
+
+<h3 id="delete">DELETE</h3>
+
+<p>Make a DELETE request to delete an entry, form, View, or field.</p>
+
+<h2 id="request-response-format">Request/Response Format</h2>
+
+<p>The default response format is JSON. Requests with a message-body use plain JSON to set or update resource attributes. Successful requests will return a <code class="prettyprint">200 OK</code> HTTP status.</p>
+
+<h2 id="errors">Errors</h2>
+
+<p>Occasionally you might encounter errors when accessing the REST API. There are four possible types:</p>
+
+<table><thead>
+<tr>
+<th>Error Code</th>
+<th>Error Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code class="prettyprint">400 Bad Request</code></td>
+<td>Invalid request, e.g. using an unsupported HTTP method</td>
+</tr>
+<tr>
+<td><code class="prettyprint">401 Unauthorized</code></td>
+<td>Authentication or permission error, e.g. incorrect API keys</td>
+</tr>
+<tr>
+<td><code class="prettyprint">403 Forbidden</code></td>
+<td>Your API key didn&rsquo;t log you in. If you are using Basic Authentication, your server may not be recognizing your authorization headers.</td>
+</tr>
+<tr>
+<td><code class="prettyprint">404 Not Found</code></td>
+<td>Requests to resources that don&rsquo;t exist or are missing</td>
+</tr>
+<tr>
+<td><code class="prettyprint">500 Internal Server Error</code></td>
+<td>Server error</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>WP REST API error example:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rest_no_route"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"No route was found matching the URL and request method"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">404</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Errors return both an appropriate HTTP status code and response object which contains a <code class="prettyprint">code</code>, <code class="prettyprint">message</code> and <code class="prettyprint">data</code> attribute.</p>
+
+<h2 id="parameters">Parameters</h2>
+
+<p>Almost all endpoints accept optional parameters which can be passed as a HTTP query string parameter, e.g. <code class="prettyprint">GET /entries?search=Test</code>. All parameters are documented along each endpoint.</p>
+
       </div>
       <div class="dark-box">
           <div class="lang-selector">
