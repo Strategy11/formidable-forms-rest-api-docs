@@ -575,7 +575,6 @@ body.has-warning {
 }
 
 #warning-top {
-  @include text-shadow(0 1px 0 lighten($aside-warning-bg, 5%));
   box-shadow: 0 0 5px black;
   font-weight: bold;
   left: 0;
