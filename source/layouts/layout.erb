@@ -92,5 +92,10 @@ under the License.
         <% end %>
       </div>
     </div>
+    <% if current_page.data.warning %>
+			<div id="warning-top">
+				<%= current_page.data.warning %>
+			</div>
+		<% end %>
   </body>
 </html>
