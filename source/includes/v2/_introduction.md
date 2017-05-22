@@ -74,6 +74,10 @@ Errors return both an appropriate HTTP status code and response object which con
 
 Almost all endpoints accept optional parameters which can be passed as a HTTP query string parameter, e.g. `GET /entries?search=Test`. All parameters are documented along each endpoint.
 
+<aside class="notice">
+By default, the WP REST API supports JSONP; since the Formidable Forms API is fully integrated with the WP REST API, it can return data in JSONP as well. To find more information using JSONP with the WP REST API, click [here](https://developer.wordpress.org/rest-api/using-the-rest-api/global-parameters/#_jsonp).
+</aside>
+
 ## Tools ##
 
 Some useful tools you can use to access the API include:
