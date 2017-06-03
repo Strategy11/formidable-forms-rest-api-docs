@@ -13,6 +13,7 @@ curl -user 95SX-LM4Z-DDTC-HP8A: https://example.com/wp-json/frm/v2/forms
 ```
 
 ```php
+<?php
 $headers = array (
 	'Authorization' => 'Basic ' . base64_encode( 'username:password' ),
 );
@@ -21,6 +22,7 @@ $response = wp_remote_request( 'https://example.com/wp-json/frm/v2/forms', array
 	'method' => 'GET',
 	'headers' => $headers
 ));
+?>
 ```
 
 > JSON response example:
@@ -92,6 +94,7 @@ curl -user 95SX-LM4Z-DDTC-HP8A: https://example.com/wp-json/frm/v2/forms/40
 ```
 
 ```php
+<?php
 $headers = array (
 	'Authorization' => 'Basic ' . base64_encode( 'username:password' ),
 );
@@ -100,6 +103,7 @@ $response = wp_remote_request( 'https://example.com/wp-json/frm/v2/forms/40', ar
 	'method' => 'GET',
 	'headers' => $headers
 ));
+?>
 ```
 
 > JSON response example:
@@ -147,6 +151,7 @@ curl -user 95SX-LM4Z-DDTC-HP8A: -X POST https://example.com/wp-json/frm/v2/forms
 ```
 
 ```php
+<?php
 $headers = array (
 	'Authorization' => 'Basic ' . base64_encode( 'username:password' ),
 );
@@ -155,6 +160,7 @@ $response = wp_remote_request( 'https://example.com/wp-json/frm/v2/forms', array
 	'method' => 'GET',
 	'headers' => $headers
 ));
+?>
 ```
 
 > JSON response example:
@@ -211,6 +217,10 @@ $response = wp_remote_request( 'https://example.com/wp-json/frm/v2/forms', array
 
 This endpoint deletes a single form.
 
+<aside class="warning">
+Deleting a form with the endpoint will permanently and immediately delete the form and all of it's fields.
+</aside>
+
 `DELETE http://example.com/wp-json/frm/v2/forms/{formID}`
 
 ```shell
@@ -218,6 +228,7 @@ curl -user 95SX-LM4Z-DDTC-HP8A: -X DELETE https://example.com/wp-json/frm/v2/for
 ```
 
 ```php
+<?php
 $headers = array (
 	'Authorization' => 'Basic ' . base64_encode( 'username:password' ),
 );
@@ -226,6 +237,7 @@ $response = wp_remote_request( 'https://example.com/wp-json/frm/v2/forms/40', ar
 	'method' => 'DELETE',
 	'headers' => $headers
 ));
+?>
 ```
 
 > JSON response example:
