@@ -217,11 +217,11 @@ $response = wp_remote_request( 'https://example.com/wp-json/frm/v2/forms', array
 
 This endpoint deletes a single form.
 
+`DELETE http://example.com/wp-json/frm/v2/forms/{formID}`
+
 <aside class="warning">
 Deleting a form with the endpoint will permanently and immediately delete the form and all of it's fields.
 </aside>
-
-`DELETE http://example.com/wp-json/frm/v2/forms/{formID}`
 
 ```shell
 curl -user 95SX-LM4Z-DDTC-HP8A: -X DELETE https://example.com/wp-json/frm/v2/forms/40
