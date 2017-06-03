@@ -6,7 +6,58 @@ This endpoint retrieves an array of all forms.
 
 ### HTTP Request
 
-`GET http://example.com/wp-json/frm/v2/forms`
+`GET https://example.com/wp-json/frm/v2/forms`
+
+```shell
+curl -user 95SX-LM4Z-DDTC-HP8A: https://example.com/wp-json/frm/v2/forms
+```
+
+```php
+$headers = array (
+	'Authorization' => 'Basic ' . base64_encode( 'username:password' ),
+);
+
+$response = wp_remote_request( 'https://example.com/wp-json/frm/v2/forms', array(
+	'method' => 'GET',
+	'headers' => $headers
+));
+```
+
+> JSON response example:
+
+```json
+{
+  "3qshv": {
+    "id": "40",
+    "form_key": "3qshv",
+    "name": "test radio button",
+    "description": "",
+    "parent_form_id": "0",
+    "logged_in": "0",
+    "is_template": "0",
+    "created_at": "2017-05-15 05:28:46",
+    "link": "https://example.com/wp-admin/admin-ajax.php?action=frm_forms_preview&#038;form=3qshv",
+    "_links": {
+      "self": [
+        {
+          "href": "https://example.com/wp-json/frm/v2/forms/40"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://example.com/wp-json/frm/v2/forms"
+        }
+      ],
+      "fields": [
+        {
+          "embeddable": true,
+          "href": "https://example.com/wp-json/frm/v2/forms/40/fields"
+        }
+      ]
+    }
+  }
+}
+```
 
 ### Query Parameters
 
@@ -34,16 +85,84 @@ You can specify further pages with the `?page` parameter:
 
 This endpoint gets a single form.
 
-`GET http://example.com/wp-json/frm/v2/forms/{formID}`
+`GET https://example.com/wp-json/frm/v2/forms/{formID}`
 
-## Create a Form
+```shell
+curl -user 95SX-LM4Z-DDTC-HP8A: https://example.com/wp-json/frm/v2/forms/40
+```
 
->This endpoint returns the following JSON.
+```php
+$headers = array (
+	'Authorization' => 'Basic ' . base64_encode( 'username:password' ),
+);
+
+$response = wp_remote_request( 'https://example.com/wp-json/frm/v2/forms/40', array(
+	'method' => 'GET',
+	'headers' => $headers
+));
+```
+
+> JSON response example:
 
 ```json
 {
-    "id": "568",
-    "form_key": "65ukw",
+  "id": "40",
+  "form_key": "3qshv",
+  "name": "Example Form",
+  "description": "",
+  "parent_form_id": "0",
+  "logged_in": "0",
+  "is_template": "0",
+  "created_at": "2017-05-15 05:28:46",
+  "link": "https://example.com/wp-admin/admin-ajax.php?action=frm_forms_preview&#038;form=3qshv",
+  "_links": {
+    "self": [
+      {
+        "href": "https://example.com/wp-json/frm/v2/forms/40"
+      }
+    ],
+    "collection": [
+      {
+        "href": "https://example.com/wp-json/frm/v2/forms"
+      }
+    ],
+    "fields": [
+      {
+        "embeddable": true,
+        "href": "https://example.com/wp-json/frm/v2/forms/40/fields"
+      }
+    ]
+  }
+}
+```
+
+## Create a Form
+
+This endpoint creates a single form.
+
+`POST http://example.com/wp-json/frm/v2/forms/`
+
+```shell
+curl -user 95SX-LM4Z-DDTC-HP8A: -X POST https://example.com/wp-json/frm/v2/forms
+```
+
+```php
+$headers = array (
+	'Authorization' => 'Basic ' . base64_encode( 'username:password' ),
+);
+
+$response = wp_remote_request( 'https://example.com/wp-json/frm/v2/forms', array(
+	'method' => 'GET',
+	'headers' => $headers
+));
+```
+
+> JSON response example:
+
+```json
+{
+    "id": "40",
+    "form_key": "3qshv",
     "name": "",
     "description": "",
     "status": "draft",
@@ -66,34 +185,95 @@ This endpoint gets a single form.
     },
     "editable": "0",
     "created_at": "2017-05-20 04:47:56",
-    "link": "http://localhost:8888/wordpress/wp-admin/admin-ajax.php?action=frm_forms_preview&#038;form=65ukw",
+    "link": "https://example.com/wp-admin/admin-ajax.php?action=frm_forms_preview&#038;form=3qshv",
     "_links": {
         "self": [
             {
-                "href": "http://localhost:8888/wordpress/wp-json/frm/v2/forms/568"
+                "href": "https://example.com/wp-json/frm/v2/forms/40"
             }
         ],
         "collection": [
             {
-                "href": "http://localhost:8888/wordpress/wp-json/frm/v2/forms"
+                "href": "https://example.com/wp-json/frm/v2/forms"
             }
         ],
         "fields": [
             {
                 "embeddable": true,
-                "href": "http://localhost:8888/wordpress/wp-json/frm/v2/forms/568/fields"
+                "href": "https://example.com/wp-json/frm/v2/forms/40/fields"
             }
         ]
     }
 }
 ```
 
-This endpoint creates a single form.
-
-`POST http://example.com/wp-json/frm/v2/forms/`
-
 ## Delete a Form
 
 This endpoint deletes a single form.
 
 `DELETE http://example.com/wp-json/frm/v2/forms/{formID}`
+
+```shell
+curl -user 95SX-LM4Z-DDTC-HP8A: -X DELETE https://example.com/wp-json/frm/v2/forms/40
+```
+
+```php
+$headers = array (
+	'Authorization' => 'Basic ' . base64_encode( 'username:password' ),
+);
+
+$response = wp_remote_request( 'https://example.com/wp-json/frm/v2/forms/40', array(
+	'method' => 'DELETE',
+	'headers' => $headers
+));
+```
+
+> JSON response example:
+
+```json
+{
+    "id": "40",
+    "form_key": "3qshv",
+    "name": "",
+    "description": "",
+    "status": "draft",
+    "parent_form_id": "0",
+    "logged_in": "0",
+    "is_template": "0",
+    "options": {
+        "submit_value": "Submit",
+        "success_action": "message",
+        "success_msg": "Your responses were successfully submitted. Thank you!",
+        "show_form": 0,
+        "akismet": "",
+        "no_save": 0,
+        "ajax_load": 0,
+        "form_class": "",
+        "custom_style": 1,
+        "before_html": "<legend class=\"frm_hidden\">[form_name]</legend>\n[if form_name]<h3 class=\"frm_form_title\">[form_name]</h3>[/if form_name]\n[if form_description]<div class=\"frm_description\">[form_description]</div>[/if form_description]",
+        "after_html": "",
+        "submit_html": "<div class=\"frm_submit\">\n[if back_button]<button type=\"submit\" name=\"frm_prev_page\" formnovalidate=\"formnovalidate\" class=\"frm_prev_page\" [back_hook]>[back_label]</button>[/if back_button]\n<button class=\"frm_button_submit\" type=\"submit\"  [button_action]>[button_label]</button>\n[if save_draft]<a href=\"#\" class=\"frm_save_draft\" [draft_hook]>[draft_label]</a>[/if save_draft]\n</div>"
+    },
+    "editable": "0",
+    "created_at": "2017-05-20 04:47:56",
+    "link": "https://example.com/wp-admin/admin-ajax.php?action=frm_forms_preview&#038;form=3qshv",
+    "_links": {
+        "self": [
+            {
+                "href": "https://example.com/wp-json/frm/v2/forms/568"
+            }
+        ],
+        "collection": [
+            {
+                "href": "https://example.com/wp-json/frm/v2/forms"
+            }
+        ],
+        "fields": [
+            {
+                "embeddable": true,
+                "href": "https://example.com/wp-json/frm/v2/forms/568/fields"
+            }
+        ]
+    }
+}
+```
