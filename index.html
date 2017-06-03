@@ -379,14 +379,16 @@ By default, the WP REST API supports JSONP; since the Formidable Forms API is fu
 
 <p><code class="prettyprint">GET https://example.com/wp-json/frm/v2/forms</code></p>
 <pre class="highlight shell tab-shell"><code>curl -user 95SX-LM4Z-DDTC-HP8A: https://example.com/wp-json/frm/v2/forms
-</code></pre><pre class="highlight php tab-php"><code>$headers = array (
-    'Authorization' =&gt; 'Basic ' . base64_encode( 'username:password' ),
-);
+</code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="nv">$headers</span> <span class="o">=</span> <span class="k">array</span> <span class="p">(</span>
+    <span class="s1">'Authorization'</span> <span class="o">=&gt;</span> <span class="s1">'Basic '</span> <span class="o">.</span> <span class="nb">base64_encode</span><span class="p">(</span> <span class="s1">'username:password'</span> <span class="p">),</span>
+<span class="p">);</span>
 
-$response = wp_remote_request( 'https://example.com/wp-json/frm/v2/forms', array(
-    'method' =&gt; 'GET',
-    'headers' =&gt; $headers
-));
+<span class="nv">$response</span> <span class="o">=</span> <span class="nx">wp_remote_request</span><span class="p">(</span> <span class="s1">'https://example.com/wp-json/frm/v2/forms'</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'method'</span> <span class="o">=&gt;</span> <span class="s1">'GET'</span><span class="p">,</span>
+    <span class="s1">'headers'</span> <span class="o">=&gt;</span> <span class="nv">$headers</span>
+<span class="p">));</span>
+<span class="cp">?&gt;</span>
 </code></pre>
 <blockquote>
 <p>JSON response example:</p>
@@ -485,14 +487,16 @@ $response = wp_remote_request( 'https://example.com/wp-json/frm/v2/forms', array
 
 <p><code class="prettyprint">GET https://example.com/wp-json/frm/v2/forms/{formID}</code></p>
 <pre class="highlight shell tab-shell"><code>curl -user 95SX-LM4Z-DDTC-HP8A: https://example.com/wp-json/frm/v2/forms/40
-</code></pre><pre class="highlight php tab-php"><code>$headers = array (
-    'Authorization' =&gt; 'Basic ' . base64_encode( 'username:password' ),
-);
+</code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="nv">$headers</span> <span class="o">=</span> <span class="k">array</span> <span class="p">(</span>
+    <span class="s1">'Authorization'</span> <span class="o">=&gt;</span> <span class="s1">'Basic '</span> <span class="o">.</span> <span class="nb">base64_encode</span><span class="p">(</span> <span class="s1">'username:password'</span> <span class="p">),</span>
+<span class="p">);</span>
 
-$response = wp_remote_request( 'https://example.com/wp-json/frm/v2/forms/40', array(
-    'method' =&gt; 'GET',
-    'headers' =&gt; $headers
-));
+<span class="nv">$response</span> <span class="o">=</span> <span class="nx">wp_remote_request</span><span class="p">(</span> <span class="s1">'https://example.com/wp-json/frm/v2/forms/40'</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'method'</span> <span class="o">=&gt;</span> <span class="s1">'GET'</span><span class="p">,</span>
+    <span class="s1">'headers'</span> <span class="o">=&gt;</span> <span class="nv">$headers</span>
+<span class="p">));</span>
+<span class="cp">?&gt;</span>
 </code></pre>
 <blockquote>
 <p>JSON response example:</p>
@@ -533,14 +537,16 @@ $response = wp_remote_request( 'https://example.com/wp-json/frm/v2/forms/40', ar
 
 <p><code class="prettyprint">POST http://example.com/wp-json/frm/v2/forms/</code></p>
 <pre class="highlight shell tab-shell"><code>curl -user 95SX-LM4Z-DDTC-HP8A: -X POST https://example.com/wp-json/frm/v2/forms
-</code></pre><pre class="highlight php tab-php"><code>$headers = array (
-    'Authorization' =&gt; 'Basic ' . base64_encode( 'username:password' ),
-);
+</code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="nv">$headers</span> <span class="o">=</span> <span class="k">array</span> <span class="p">(</span>
+    <span class="s1">'Authorization'</span> <span class="o">=&gt;</span> <span class="s1">'Basic '</span> <span class="o">.</span> <span class="nb">base64_encode</span><span class="p">(</span> <span class="s1">'username:password'</span> <span class="p">),</span>
+<span class="p">);</span>
 
-$response = wp_remote_request( 'https://example.com/wp-json/frm/v2/forms', array(
-    'method' =&gt; 'GET',
-    'headers' =&gt; $headers
-));
+<span class="nv">$response</span> <span class="o">=</span> <span class="nx">wp_remote_request</span><span class="p">(</span> <span class="s1">'https://example.com/wp-json/frm/v2/forms'</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'method'</span> <span class="o">=&gt;</span> <span class="s1">'GET'</span><span class="p">,</span>
+    <span class="s1">'headers'</span> <span class="o">=&gt;</span> <span class="nv">$headers</span>
+<span class="p">));</span>
+<span class="cp">?&gt;</span>
 </code></pre>
 <blockquote>
 <p>JSON response example:</p>
@@ -595,16 +601,22 @@ $response = wp_remote_request( 'https://example.com/wp-json/frm/v2/forms', array
 
 <p>This endpoint deletes a single form.</p>
 
+<aside class="warning">
+Deleting a form with the endpoint will permanently and immediately delete the form and all of it&rsquo;s fields.
+</aside>
+
 <p><code class="prettyprint">DELETE http://example.com/wp-json/frm/v2/forms/{formID}</code></p>
 <pre class="highlight shell tab-shell"><code>curl -user 95SX-LM4Z-DDTC-HP8A: -X DELETE https://example.com/wp-json/frm/v2/forms/40
-</code></pre><pre class="highlight php tab-php"><code>$headers = array (
-    'Authorization' =&gt; 'Basic ' . base64_encode( 'username:password' ),
-);
+</code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="nv">$headers</span> <span class="o">=</span> <span class="k">array</span> <span class="p">(</span>
+    <span class="s1">'Authorization'</span> <span class="o">=&gt;</span> <span class="s1">'Basic '</span> <span class="o">.</span> <span class="nb">base64_encode</span><span class="p">(</span> <span class="s1">'username:password'</span> <span class="p">),</span>
+<span class="p">);</span>
 
-$response = wp_remote_request( 'https://example.com/wp-json/frm/v2/forms/40', array(
-    'method' =&gt; 'DELETE',
-    'headers' =&gt; $headers
-));
+<span class="nv">$response</span> <span class="o">=</span> <span class="nx">wp_remote_request</span><span class="p">(</span> <span class="s1">'https://example.com/wp-json/frm/v2/forms/40'</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'method'</span> <span class="o">=&gt;</span> <span class="s1">'DELETE'</span><span class="p">,</span>
+    <span class="s1">'headers'</span> <span class="o">=&gt;</span> <span class="nv">$headers</span>
+<span class="p">));</span>
+<span class="cp">?&gt;</span>
 </code></pre>
 <blockquote>
 <p>JSON response example:</p>
