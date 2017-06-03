@@ -601,11 +601,11 @@ By default, the WP REST API supports JSONP; since the Formidable Forms API is fu
 
 <p>This endpoint deletes a single form.</p>
 
+<p><code class="prettyprint">DELETE http://example.com/wp-json/frm/v2/forms/{formID}</code></p>
+
 <aside class="warning">
 Deleting a form with the endpoint will permanently and immediately delete the form and all of it&rsquo;s fields.
 </aside>
-
-<p><code class="prettyprint">DELETE http://example.com/wp-json/frm/v2/forms/{formID}</code></p>
 <pre class="highlight shell tab-shell"><code>curl -user 95SX-LM4Z-DDTC-HP8A: -X DELETE https://example.com/wp-json/frm/v2/forms/40
 </code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 <span class="nv">$headers</span> <span class="o">=</span> <span class="k">array</span> <span class="p">(</span>
