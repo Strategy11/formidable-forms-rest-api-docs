@@ -9,13 +9,13 @@ This endpoint retrieves an array of all forms.
 `GET https://example.com/wp-json/frm/v2/forms`
 
 ```shell
-curl -user 95SX-LM4Z-DDTC-HP8A: https://example.com/wp-json/frm/v2/forms
+curl -user 95SX-LM4Z-DDTC-HP8A:x https://example.com/wp-json/frm/v2/forms
 ```
 
 ```php
 <?php
 $headers = array (
-	'Authorization' => 'Basic ' . base64_encode( 'username:password' ),
+	'Authorization' => 'Basic ' . base64_encode( '95SX-LM4Z-DDTC-HP8A:x' ),
 );
 
 $response = wp_remote_request( 'https://example.com/wp-json/frm/v2/forms', array(
@@ -25,6 +25,24 @@ $response = wp_remote_request( 'https://example.com/wp-json/frm/v2/forms', array
 ?>
 ```
 
+```javascript
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$.ajax({
+			beforeSend: function(xhr){
+				xhr.setRequestHeader ("Authorization", "Basic " + btoa("95SX-LM4Z-DDTC-HP8A:x"));
+			},
+			dataType: "json",
+			url: "https://example.com/wp-json/frm/v2/forms",
+			success: function(json){
+				//do something with the json
+				console.log(json);
+			}
+		});
+	});
+</script>
+```
+
 > JSON response example:
 
 ```json
@@ -32,7 +50,7 @@ $response = wp_remote_request( 'https://example.com/wp-json/frm/v2/forms', array
   "3qshv": {
     "id": "40",
     "form_key": "3qshv",
-    "name": "test radio button",
+    "name": "Example Form",
     "description": "",
     "parent_form_id": "0",
     "logged_in": "0",
@@ -90,13 +108,13 @@ This endpoint gets a single form.
 `GET https://example.com/wp-json/frm/v2/forms/{formID}`
 
 ```shell
-curl -user 95SX-LM4Z-DDTC-HP8A: https://example.com/wp-json/frm/v2/forms/40
+curl -user 95SX-LM4Z-DDTC-HP8A:x https://example.com/wp-json/frm/v2/forms/40
 ```
 
 ```php
 <?php
 $headers = array (
-	'Authorization' => 'Basic ' . base64_encode( 'username:password' ),
+	'Authorization' => 'Basic ' . base64_encode( '95SX-LM4Z-DDTC-HP8A:x' ),
 );
 
 $response = wp_remote_request( 'https://example.com/wp-json/frm/v2/forms/40', array(
@@ -147,17 +165,17 @@ This endpoint creates a single form.
 `POST http://example.com/wp-json/frm/v2/forms/`
 
 ```shell
-curl -user 95SX-LM4Z-DDTC-HP8A: -X POST https://example.com/wp-json/frm/v2/forms
+curl -user 95SX-LM4Z-DDTC-HP8A:x -X POST https://example.com/wp-json/frm/v2/forms
 ```
 
 ```php
 <?php
 $headers = array (
-	'Authorization' => 'Basic ' . base64_encode( 'username:password' ),
+	'Authorization' => 'Basic ' . base64_encode( '95SX-LM4Z-DDTC-HP8A:x' ),
 );
 
 $response = wp_remote_request( 'https://example.com/wp-json/frm/v2/forms', array(
-	'method' => 'GET',
+	'method' => 'POST',
 	'headers' => $headers
 ));
 ?>
@@ -224,13 +242,13 @@ Deleting a form with the endpoint will permanently and immediately delete the fo
 </aside>
 
 ```shell
-curl -user 95SX-LM4Z-DDTC-HP8A: -X DELETE https://example.com/wp-json/frm/v2/forms/40
+curl -user 95SX-LM4Z-DDTC-HP8A:x -X DELETE https://example.com/wp-json/frm/v2/forms/40
 ```
 
 ```php
 <?php
 $headers = array (
-	'Authorization' => 'Basic ' . base64_encode( 'username:password' ),
+	'Authorization' => 'Basic ' . base64_encode( '95SX-LM4Z-DDTC-HP8A:x' ),
 );
 
 $response = wp_remote_request( 'https://example.com/wp-json/frm/v2/forms/40', array(
@@ -246,7 +264,7 @@ $response = wp_remote_request( 'https://example.com/wp-json/frm/v2/forms/40', ar
 {
     "id": "40",
     "form_key": "3qshv",
-    "name": "",
+    "name": "Example Form",
     "description": "",
     "status": "draft",
     "parent_form_id": "0",
