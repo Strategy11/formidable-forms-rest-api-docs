@@ -26,21 +26,19 @@ $response = wp_remote_request( 'https://example.com/wp-json/frm/v2/forms', array
 ```
 
 ```javascript
-<script type="text/javascript">
-	jQuery(document).ready(function($) {
-		$.ajax({
-			beforeSend: function(xhr){
-				xhr.setRequestHeader ("Authorization", "Basic " + btoa("95SX-LM4Z-DDTC-HP8A:x"));
-			},
-			dataType: "json",
-			url: "https://example.com/wp-json/frm/v2/forms",
-			success: function(json){
-				//do something with the json
-				console.log(json);
-			}
-		});
+jQuery(document).ready(function($) {
+	$.ajax({
+		beforeSend: function(xhr){
+			xhr.setRequestHeader ("Authorization", "Basic " + btoa("95SX-LM4Z-DDTC-HP8A:x"));
+		},
+		dataType: "json",
+		url: "https://example.com/jonathan/wp-json/frm/v2/forms",
+		success: function(json){
+			//do something with the json
+			console.log(json);
+		}
 	});
-</script>
+});
 ```
 
 > JSON response example:
@@ -124,6 +122,22 @@ $response = wp_remote_request( 'https://example.com/wp-json/frm/v2/forms/40', ar
 ?>
 ```
 
+```javascript
+jQuery(document).ready(function($) {
+	$.ajax({
+		beforeSend: function(xhr){
+			xhr.setRequestHeader ("Authorization", "Basic " + btoa("95SX-LM4Z-DDTC-HP8A:x"));
+		},
+		dataType: "json",
+		url: "https://example.com/jonathan/wp-json/frm/v2/forms/40",
+		success: function(json){
+			//do something with the json
+			console.log(json);
+		}
+	});
+});
+```
+
 > JSON response example:
 
 ```json
@@ -179,6 +193,23 @@ $response = wp_remote_request( 'https://example.com/wp-json/frm/v2/forms', array
 	'headers' => $headers
 ));
 ?>
+```
+
+```javascript
+jQuery(document).ready(function($) {
+	$.ajax({
+		beforeSend: function(xhr){
+			xhr.setRequestHeader ("Authorization", "Basic " + btoa("95SX-LM4Z-DDTC-HP8A:x"));
+		},
+		dataType: "json",
+		method: "POST",
+		url: "https://example.com/wp-json/frm/v2/forms",
+		success: function(json){
+			//do something with the json
+			console.log(json);
+		}
+	});
+});
 ```
 
 > JSON response example:
@@ -256,6 +287,23 @@ $response = wp_remote_request( 'https://example.com/wp-json/frm/v2/forms/40', ar
 	'headers' => $headers
 ));
 ?>
+```
+
+```javascript
+jQuery(document).ready(function($) {
+	$.ajax({
+		beforeSend: function(xhr){
+			xhr.setRequestHeader ("Authorization", "Basic " + btoa("95SX-LM4Z-DDTC-HP8A:x"));
+		},
+		dataType: "json",
+		method: "DELETE",
+		url: "https://example.com/wp-json/frm/v2/forms/40",
+		success: function(json){
+			//do something with the json
+			console.log(json);
+		}
+	});
+});
 ```
 
 > JSON response example:
