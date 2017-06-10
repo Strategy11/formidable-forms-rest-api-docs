@@ -389,22 +389,20 @@ By default, the WP REST API supports JSONP; since the Formidable Forms API is fu
     <span class="s1">'headers'</span> <span class="o">=&gt;</span> <span class="nv">$headers</span>
 <span class="p">));</span>
 <span class="cp">?&gt;</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text/javascript"</span><span class="o">&gt;</span>
-    <span class="nx">jQuery</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
-            <span class="na">beforeSend</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">xhr</span><span class="p">){</span>
-                <span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span> <span class="p">(</span><span class="s2">"Authorization"</span><span class="p">,</span> <span class="s2">"Basic "</span> <span class="o">+</span> <span class="nx">btoa</span><span class="p">(</span><span class="s2">"95SX-LM4Z-DDTC-HP8A:x"</span><span class="p">));</span>
-            <span class="p">},</span>
-            <span class="na">dataType</span><span class="p">:</span> <span class="s2">"json"</span><span class="p">,</span>
-            <span class="na">url</span><span class="p">:</span> <span class="s2">"https://example.com/wp-json/frm/v2/forms"</span><span class="p">,</span>
-            <span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">json</span><span class="p">){</span>
-                <span class="c1">//do something with the json</span>
-                <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">json</span><span class="p">);</span>
-            <span class="p">}</span>
-        <span class="p">});</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">jQuery</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+        <span class="na">beforeSend</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">xhr</span><span class="p">){</span>
+            <span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span> <span class="p">(</span><span class="s2">"Authorization"</span><span class="p">,</span> <span class="s2">"Basic "</span> <span class="o">+</span> <span class="nx">btoa</span><span class="p">(</span><span class="s2">"95SX-LM4Z-DDTC-HP8A:x"</span><span class="p">));</span>
+        <span class="p">},</span>
+        <span class="na">dataType</span><span class="p">:</span> <span class="s2">"json"</span><span class="p">,</span>
+        <span class="na">url</span><span class="p">:</span> <span class="s2">"https://example.com/jonathan/wp-json/frm/v2/forms"</span><span class="p">,</span>
+        <span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">json</span><span class="p">){</span>
+            <span class="c1">//do something with the json</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">json</span><span class="p">);</span>
+        <span class="p">}</span>
     <span class="p">});</span>
-<span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
-</span></code></pre>
+<span class="p">});</span>
+</code></pre>
 <blockquote>
 <p>JSON response example:</p>
 </blockquote>
@@ -512,6 +510,19 @@ By default, the WP REST API supports JSONP; since the Formidable Forms API is fu
     <span class="s1">'headers'</span> <span class="o">=&gt;</span> <span class="nv">$headers</span>
 <span class="p">));</span>
 <span class="cp">?&gt;</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">jQuery</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+        <span class="na">beforeSend</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">xhr</span><span class="p">){</span>
+            <span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span> <span class="p">(</span><span class="s2">"Authorization"</span><span class="p">,</span> <span class="s2">"Basic "</span> <span class="o">+</span> <span class="nx">btoa</span><span class="p">(</span><span class="s2">"95SX-LM4Z-DDTC-HP8A:x"</span><span class="p">));</span>
+        <span class="p">},</span>
+        <span class="na">dataType</span><span class="p">:</span> <span class="s2">"json"</span><span class="p">,</span>
+        <span class="na">url</span><span class="p">:</span> <span class="s2">"https://example.com/jonathan/wp-json/frm/v2/forms/40"</span><span class="p">,</span>
+        <span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">json</span><span class="p">){</span>
+            <span class="c1">//do something with the json</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">json</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+<span class="p">});</span>
 </code></pre>
 <blockquote>
 <p>JSON response example:</p>
@@ -562,6 +573,20 @@ By default, the WP REST API supports JSONP; since the Formidable Forms API is fu
     <span class="s1">'headers'</span> <span class="o">=&gt;</span> <span class="nv">$headers</span>
 <span class="p">));</span>
 <span class="cp">?&gt;</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">jQuery</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+        <span class="na">beforeSend</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">xhr</span><span class="p">){</span>
+            <span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span> <span class="p">(</span><span class="s2">"Authorization"</span><span class="p">,</span> <span class="s2">"Basic "</span> <span class="o">+</span> <span class="nx">btoa</span><span class="p">(</span><span class="s2">"95SX-LM4Z-DDTC-HP8A:x"</span><span class="p">));</span>
+        <span class="p">},</span>
+        <span class="na">dataType</span><span class="p">:</span> <span class="s2">"json"</span><span class="p">,</span>
+        <span class="na">method</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
+        <span class="na">url</span><span class="p">:</span> <span class="s2">"https://example.com/wp-json/frm/v2/forms"</span><span class="p">,</span>
+        <span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">json</span><span class="p">){</span>
+            <span class="c1">//do something with the json</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">json</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+<span class="p">});</span>
 </code></pre>
 <blockquote>
 <p>JSON response example:</p>
@@ -632,6 +657,20 @@ Deleting a form with the endpoint will permanently and immediately delete the fo
     <span class="s1">'headers'</span> <span class="o">=&gt;</span> <span class="nv">$headers</span>
 <span class="p">));</span>
 <span class="cp">?&gt;</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">jQuery</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+        <span class="na">beforeSend</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">xhr</span><span class="p">){</span>
+            <span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span> <span class="p">(</span><span class="s2">"Authorization"</span><span class="p">,</span> <span class="s2">"Basic "</span> <span class="o">+</span> <span class="nx">btoa</span><span class="p">(</span><span class="s2">"95SX-LM4Z-DDTC-HP8A:x"</span><span class="p">));</span>
+        <span class="p">},</span>
+        <span class="na">dataType</span><span class="p">:</span> <span class="s2">"json"</span><span class="p">,</span>
+        <span class="na">method</span><span class="p">:</span> <span class="s2">"DELETE"</span><span class="p">,</span>
+        <span class="na">url</span><span class="p">:</span> <span class="s2">"https://example.com/wp-json/frm/v2/forms/40"</span><span class="p">,</span>
+        <span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">json</span><span class="p">){</span>
+            <span class="c1">//do something with the json</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">json</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+<span class="p">});</span>
 </code></pre>
 <blockquote>
 <p>JSON response example:</p>
