@@ -378,6 +378,62 @@ By default, the WP REST API supports JSONP; since the Formidable Forms API is fu
 <h3 id="http-request">HTTP Request</h3>
 
 <p><code class="prettyprint">GET https://example.com/wp-json/frm/v2/forms</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>limit</td>
+<td>20</td>
+<td>Limit the number of forms returned</td>
+</tr>
+<tr>
+<td>order</td>
+<td>ASC</td>
+<td>Use ASC or DESC</td>
+</tr>
+<tr>
+<td>order_by</td>
+<td>created_at</td>
+<td>Order the entries by id, created_at, updated_at, form_id</td>
+</tr>
+<tr>
+<td>page</td>
+<td>1</td>
+<td>The page number to retrieve.</td>
+</tr>
+<tr>
+<td>page_size</td>
+<td>10</td>
+<td>Change the number of forms returned per page</td>
+</tr>
+<tr>
+<td>return</td>
+<td>array</td>
+<td>Use ?return=html to return HTML instead of JSON</td>
+</tr>
+<tr>
+<td>search</td>
+<td>&ldquo;</td>
+<td>Search all fields in the entries for a value.</td>
+</tr>
+</tbody></table>
+
+<h3 id="pagination">Pagination</h3>
+
+<p>Requests that return multiple items will be paginated to 10 items by default. The items per page can be specified with the <code class="prettyprint">?page_size</code> parameter:</p>
+
+<p><code class="prettyprint">GET /forms?page_size=15</code></p>
+
+<p>You can specify further pages with the <code class="prettyprint">?page</code> parameter:</p>
+
+<p><code class="prettyprint">GET /forms?page=2</code></p>
 <pre class="highlight shell tab-shell"><code>curl -user 95SX-LM4Z-DDTC-HP8A:x https://example.com/wp-json/frm/v2/forms
 </code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 <span class="nv">$headers</span> <span class="o">=</span> <span class="k">array</span> <span class="p">(</span>
@@ -438,65 +494,11 @@ By default, the WP REST API supports JSONP; since the Formidable Forms API is fu
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<h3 id="query-parameters">Query Parameters</h3>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>limit</td>
-<td>20</td>
-<td>Limit the number of forms returned</td>
-</tr>
-<tr>
-<td>order</td>
-<td>ASC</td>
-<td>Use ASC or DESC</td>
-</tr>
-<tr>
-<td>order_by</td>
-<td>created_at</td>
-<td>Order the entries by id, created_at, updated_at, form_id</td>
-</tr>
-<tr>
-<td>page</td>
-<td>1</td>
-<td>The page number to retrieve.</td>
-</tr>
-<tr>
-<td>page_size</td>
-<td>10</td>
-<td>Change the number of forms returned per page</td>
-</tr>
-<tr>
-<td>return</td>
-<td>array</td>
-<td>Use ?return=html to return HTML instead of JSON</td>
-</tr>
-<tr>
-<td>search</td>
-<td>&ldquo;</td>
-<td>Search all fields in the entries for a value.</td>
-</tr>
-</tbody></table>
-
-<h3 id="pagination">Pagination</h3>
-
-<p>Requests that return multiple items will be paginated to 10 items by default. The items per page can be specified with the <code class="prettyprint">?page_size</code> parameter:</p>
-
-<p><code class="prettyprint">GET /forms?page_size=15</code></p>
-
-<p>You can specify further pages with the <code class="prettyprint">?page</code> parameter:</p>
-
-<p><code class="prettyprint">GET /forms?page=2</code></p>
-
 <h2 id="get-a-single-form">Get a Single Form</h2>
 
 <p>This endpoint gets a single form.</p>
+
+<h3 id="http-request">HTTP Request</h3>
 
 <p><code class="prettyprint">GET https://example.com/wp-json/frm/v2/forms/{formID}</code></p>
 <pre class="highlight shell tab-shell"><code>curl -user 95SX-LM4Z-DDTC-HP8A:x https://example.com/wp-json/frm/v2/forms/40
@@ -560,6 +562,8 @@ By default, the WP REST API supports JSONP; since the Formidable Forms API is fu
 <h2 id="create-a-form">Create a Form</h2>
 
 <p>This endpoint creates a single form.</p>
+
+<h3 id="http-request">HTTP Request</h3>
 
 <p><code class="prettyprint">POST http://example.com/wp-json/frm/v2/forms/</code></p>
 <pre class="highlight shell tab-shell"><code>curl -user 95SX-LM4Z-DDTC-HP8A:x -X POST https://example.com/wp-json/frm/v2/forms
@@ -640,6 +644,8 @@ By default, the WP REST API supports JSONP; since the Formidable Forms API is fu
 <h2 id="delete-a-form">Delete a Form</h2>
 
 <p>This endpoint deletes a single form.</p>
+
+<h3 id="http-request">HTTP Request</h3>
 
 <p><code class="prettyprint">DELETE http://example.com/wp-json/frm/v2/forms/{formID}</code></p>
 
