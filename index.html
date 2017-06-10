@@ -740,7 +740,214 @@ Deleting a form with the endpoint will permanently and immediately delete the fo
 <h3 id="query-parameters">Query Parameters</h3>
 
 <p>There are no query parameters at this time.</p>
+<pre class="highlight shell tab-shell"><code>curl -user 95SX-LM4Z-DDTC-HP8A:x https://example.com/wp-json/frm/v2/forms/40/fields
+</code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="nv">$headers</span> <span class="o">=</span> <span class="k">array</span> <span class="p">(</span>
+    <span class="s1">'Authorization'</span> <span class="o">=&gt;</span> <span class="s1">'Basic '</span> <span class="o">.</span> <span class="nb">base64_encode</span><span class="p">(</span> <span class="s1">'95SX-LM4Z-DDTC-HP8A:x'</span> <span class="p">),</span>
+<span class="p">);</span>
 
+<span class="nv">$response</span> <span class="o">=</span> <span class="nx">wp_remote_request</span><span class="p">(</span> <span class="s1">'https://example.com/wp-json/frm/v2/forms/40/fields'</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'method'</span> <span class="o">=&gt;</span> <span class="s1">'GET'</span><span class="p">,</span>
+    <span class="s1">'headers'</span> <span class="o">=&gt;</span> <span class="nv">$headers</span>
+<span class="p">));</span>
+<span class="cp">?&gt;</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">jQuery</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+        <span class="na">beforeSend</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">xhr</span><span class="p">){</span>
+            <span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span> <span class="p">(</span><span class="s2">"Authorization"</span><span class="p">,</span> <span class="s2">"Basic "</span> <span class="o">+</span> <span class="nx">btoa</span><span class="p">(</span><span class="s2">"95SX-LM4Z-DDTC-HP8A:x"</span><span class="p">));</span>
+        <span class="p">},</span>
+        <span class="na">dataType</span><span class="p">:</span> <span class="s2">"json"</span><span class="p">,</span>
+        <span class="na">url</span><span class="p">:</span> <span class="s2">"https://example.com/jonathan/wp-json/frm/v2/forms/40/fields"</span><span class="p">,</span>
+        <span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">json</span><span class="p">){</span>
+            <span class="c1">//do something with the json</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">json</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+<span class="p">});</span>
+</code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"atkg5"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"686"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"field_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"atkg5"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dropdown"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"select"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"default_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Option 1"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Option 1"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="s2">"field_order"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"required"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"field_options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"size"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"max"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"blank"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This field cannot be blank."</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"required_indicator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"invalid"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"separate_value"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"clear_on_focus"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"default_blank"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"classes"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"custom_html"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;div id=</span><span class="se">\"</span><span class="s2">frm_field_[id]_container</span><span class="se">\"</span><span class="s2"> class=</span><span class="se">\"</span><span class="s2">frm_form_field form-field [required_class][error_class]</span><span class="se">\"</span><span class="s2">&gt;</span><span class="se">\r\n</span><span class="s2">    &lt;label for=</span><span class="se">\"</span><span class="s2">field_[key]</span><span class="se">\"</span><span class="s2"> class=</span><span class="se">\"</span><span class="s2">frm_primary_label</span><span class="se">\"</span><span class="s2">&gt;[field_name]</span><span class="se">\r\n</span><span class="s2">        &lt;span class=</span><span class="se">\"</span><span class="s2">frm_required</span><span class="se">\"</span><span class="s2">&gt;[required_label]&lt;/span&gt;</span><span class="se">\r\n</span><span class="s2">    &lt;/label&gt;</span><span class="se">\r\n</span><span class="s2">    [input]</span><span class="se">\r\n</span><span class="s2">    [if description]&lt;div class=</span><span class="se">\"</span><span class="s2">frm_description</span><span class="se">\"</span><span class="s2">&gt;[description]&lt;/div&gt;[/if description]</span><span class="se">\r\n</span><span class="s2">    [if error]&lt;div class=</span><span class="se">\"</span><span class="s2">frm_error</span><span class="se">\"</span><span class="s2">&gt;[error]&lt;/div&gt;[/if error]</span><span class="se">\r\n</span><span class="s2">&lt;/div&gt;"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"captcha_size"</span><span class="p">:</span><span class="w"> </span><span class="s2">"normal"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"captcha_theme"</span><span class="p">:</span><span class="w"> </span><span class="s2">"light"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"in_section"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"slide"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"form_select"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"show_hide"</span><span class="p">:</span><span class="w"> </span><span class="s2">"show"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"any_all"</span><span class="p">:</span><span class="w"> </span><span class="s2">"any"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"align"</span><span class="p">:</span><span class="w"> </span><span class="s2">"block"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"hide_field"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+            </span><span class="s2">"hide_field_cond"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"=="</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"hide_opt"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+            </span><span class="s2">"star"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"ftypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+            </span><span class="s2">"data_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"select"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"restrict"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"start_year"</span><span class="p">:</span><span class="w"> </span><span class="mi">2000</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"end_year"</span><span class="p">:</span><span class="w"> </span><span class="mi">2020</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"read_only"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"admin_only"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"attach"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"minnum"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"maxnum"</span><span class="p">:</span><span class="w"> </span><span class="mi">9999</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"delete"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"step"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"clock"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"single_time"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"start_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:00"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"end_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"23:59"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"unique"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"use_calc"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"calc"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"calc_dec"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"calc_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"dyn_default_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"multiple"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"unique_msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"autocom"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"repeat"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"add_label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Add"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"remove_label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Remove"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"conf_field"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"conf_input"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"conf_desc"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"conf_msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The entered values do not match"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"other"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"autopopulate_value"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"get_values_form"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"get_values_field"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"watch_lookup"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">""</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"get_most_recent_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"lookup_filter_current_user"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"custom_field"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"post_field"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"taxonomy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"category"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"exclude_cat"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-05 06:04:54"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"enfr"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"685"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"field_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"enfr"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Single Line Text"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"text"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"default_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"options"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"field_order"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"required"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"field_options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"size"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"max"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"blank"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This field cannot be blank."</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"required_indicator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"invalid"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"separate_value"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"clear_on_focus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"default_blank"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"classes"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"custom_html"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;div id=</span><span class="se">\"</span><span class="s2">frm_field_[id]_container</span><span class="se">\"</span><span class="s2"> class=</span><span class="se">\"</span><span class="s2">frm_form_field form-field [required_class][error_class]</span><span class="se">\"</span><span class="s2">&gt;</span><span class="se">\r\n</span><span class="s2">    &lt;label for=</span><span class="se">\"</span><span class="s2">field_[key]</span><span class="se">\"</span><span class="s2"> class=</span><span class="se">\"</span><span class="s2">frm_primary_label</span><span class="se">\"</span><span class="s2">&gt;[field_name]</span><span class="se">\r\n</span><span class="s2">        &lt;span class=</span><span class="se">\"</span><span class="s2">frm_required</span><span class="se">\"</span><span class="s2">&gt;[required_label]&lt;/span&gt;</span><span class="se">\r\n</span><span class="s2">    &lt;/label&gt;</span><span class="se">\r\n</span><span class="s2">    [input]</span><span class="se">\r\n</span><span class="s2">    [if description]&lt;div class=</span><span class="se">\"</span><span class="s2">frm_description</span><span class="se">\"</span><span class="s2">&gt;[description]&lt;/div&gt;[/if description]</span><span class="se">\r\n</span><span class="s2">    [if error]&lt;div class=</span><span class="se">\"</span><span class="s2">frm_error</span><span class="se">\"</span><span class="s2">&gt;[error]&lt;/div&gt;[/if error]</span><span class="se">\r\n</span><span class="s2">&lt;/div&gt;"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"captcha_size"</span><span class="p">:</span><span class="w"> </span><span class="s2">"normal"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"captcha_theme"</span><span class="p">:</span><span class="w"> </span><span class="s2">"light"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"in_section"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"slide"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"form_select"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"show_hide"</span><span class="p">:</span><span class="w"> </span><span class="s2">"show"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"any_all"</span><span class="p">:</span><span class="w"> </span><span class="s2">"any"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"align"</span><span class="p">:</span><span class="w"> </span><span class="s2">"block"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"hide_field"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+            </span><span class="s2">"hide_field_cond"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"=="</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"hide_opt"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+            </span><span class="s2">"star"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"ftypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+            </span><span class="s2">"data_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"select"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"restrict"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"start_year"</span><span class="p">:</span><span class="w"> </span><span class="mi">2000</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"end_year"</span><span class="p">:</span><span class="w"> </span><span class="mi">2020</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"read_only"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"admin_only"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"attach"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"minnum"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"maxnum"</span><span class="p">:</span><span class="w"> </span><span class="mi">9999</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"delete"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"step"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"clock"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"single_time"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"start_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:00"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"end_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"23:59"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"unique"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"use_calc"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"calc"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"calc_dec"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"calc_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"dyn_default_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"multiple"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"unique_msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"autocom"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"repeat"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"add_label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Add"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"remove_label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Remove"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"conf_field"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"conf_input"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"conf_desc"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"conf_msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The entered values do not match"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"other"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"autopopulate_value"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"get_values_form"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"get_values_field"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"watch_lookup"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">""</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"get_most_recent_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"lookup_filter_current_user"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"custom_field"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"post_field"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"taxonomy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"category"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"exclude_cat"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-05 06:04:51"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 <h2 id="create-a-field-in-a-form">Create a Field in a Form</h2>
 
 <p>This endpoint will allow you to create a field in a form.</p>
@@ -748,7 +955,215 @@ Deleting a form with the endpoint will permanently and immediately delete the fo
 <h3 id="http-request">HTTP Request</h3>
 
 <p><code class="prettyprint">POST http://example.com/wp-json/frm/v2/forms/{formID}/fields</code></p>
+<pre class="highlight shell tab-shell"><code>curl -user 95SX-LM4Z-DDTC-HP8A:x https://example.com/wp-json/frm/v2/forms/40/fields
+</code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="nv">$headers</span> <span class="o">=</span> <span class="k">array</span> <span class="p">(</span>
+    <span class="s1">'Authorization'</span> <span class="o">=&gt;</span> <span class="s1">'Basic '</span> <span class="o">.</span> <span class="nb">base64_encode</span><span class="p">(</span> <span class="s1">'95SX-LM4Z-DDTC-HP8A:x'</span> <span class="p">),</span>
+<span class="p">);</span>
 
+<span class="nv">$response</span> <span class="o">=</span> <span class="nx">wp_remote_request</span><span class="p">(</span> <span class="s1">'https://example.com/wp-json/frm/v2/forms/40/fields'</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'method'</span> <span class="o">=&gt;</span> <span class="s1">'POST'</span><span class="p">,</span>
+    <span class="s1">'headers'</span> <span class="o">=&gt;</span> <span class="nv">$headers</span>
+<span class="p">));</span>
+<span class="cp">?&gt;</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">jQuery</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+        <span class="na">beforeSend</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">xhr</span><span class="p">){</span>
+            <span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span> <span class="p">(</span><span class="s2">"Authorization"</span><span class="p">,</span> <span class="s2">"Basic "</span> <span class="o">+</span> <span class="nx">btoa</span><span class="p">(</span><span class="s2">"95SX-LM4Z-DDTC-HP8A:x"</span><span class="p">));</span>
+        <span class="p">},</span>
+        <span class="na">dataType</span><span class="p">:</span> <span class="s2">"json"</span><span class="p">,</span>
+    <span class="na">method</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
+        <span class="na">url</span><span class="p">:</span> <span class="s2">"https://example.com/jonathan/wp-json/frm/v2/forms/40/fields"</span><span class="p">,</span>
+        <span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">json</span><span class="p">){</span>
+            <span class="c1">//do something with the json</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">json</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+<span class="p">});</span>
+</code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"atkg5"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"686"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"field_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"atkg5"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dropdown"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"select"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"default_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Option 1"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Option 1"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="s2">"field_order"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"required"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"field_options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"size"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"max"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"blank"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This field cannot be blank."</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"required_indicator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"invalid"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"separate_value"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"clear_on_focus"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"default_blank"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"classes"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"custom_html"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;div id=</span><span class="se">\"</span><span class="s2">frm_field_[id]_container</span><span class="se">\"</span><span class="s2"> class=</span><span class="se">\"</span><span class="s2">frm_form_field form-field [required_class][error_class]</span><span class="se">\"</span><span class="s2">&gt;</span><span class="se">\r\n</span><span class="s2">    &lt;label for=</span><span class="se">\"</span><span class="s2">field_[key]</span><span class="se">\"</span><span class="s2"> class=</span><span class="se">\"</span><span class="s2">frm_primary_label</span><span class="se">\"</span><span class="s2">&gt;[field_name]</span><span class="se">\r\n</span><span class="s2">        &lt;span class=</span><span class="se">\"</span><span class="s2">frm_required</span><span class="se">\"</span><span class="s2">&gt;[required_label]&lt;/span&gt;</span><span class="se">\r\n</span><span class="s2">    &lt;/label&gt;</span><span class="se">\r\n</span><span class="s2">    [input]</span><span class="se">\r\n</span><span class="s2">    [if description]&lt;div class=</span><span class="se">\"</span><span class="s2">frm_description</span><span class="se">\"</span><span class="s2">&gt;[description]&lt;/div&gt;[/if description]</span><span class="se">\r\n</span><span class="s2">    [if error]&lt;div class=</span><span class="se">\"</span><span class="s2">frm_error</span><span class="se">\"</span><span class="s2">&gt;[error]&lt;/div&gt;[/if error]</span><span class="se">\r\n</span><span class="s2">&lt;/div&gt;"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"captcha_size"</span><span class="p">:</span><span class="w"> </span><span class="s2">"normal"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"captcha_theme"</span><span class="p">:</span><span class="w"> </span><span class="s2">"light"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"in_section"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"slide"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"form_select"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"show_hide"</span><span class="p">:</span><span class="w"> </span><span class="s2">"show"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"any_all"</span><span class="p">:</span><span class="w"> </span><span class="s2">"any"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"align"</span><span class="p">:</span><span class="w"> </span><span class="s2">"block"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"hide_field"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+            </span><span class="s2">"hide_field_cond"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"=="</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"hide_opt"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+            </span><span class="s2">"star"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"ftypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+            </span><span class="s2">"data_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"select"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"restrict"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"start_year"</span><span class="p">:</span><span class="w"> </span><span class="mi">2000</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"end_year"</span><span class="p">:</span><span class="w"> </span><span class="mi">2020</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"read_only"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"admin_only"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"attach"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"minnum"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"maxnum"</span><span class="p">:</span><span class="w"> </span><span class="mi">9999</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"delete"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"step"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"clock"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"single_time"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"start_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:00"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"end_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"23:59"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"unique"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"use_calc"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"calc"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"calc_dec"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"calc_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"dyn_default_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"multiple"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"unique_msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"autocom"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"repeat"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"add_label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Add"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"remove_label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Remove"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"conf_field"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"conf_input"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"conf_desc"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"conf_msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The entered values do not match"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"other"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"autopopulate_value"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"get_values_form"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"get_values_field"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"watch_lookup"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">""</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"get_most_recent_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"lookup_filter_current_user"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"custom_field"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"post_field"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"taxonomy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"category"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"exclude_cat"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-05 06:04:54"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"enfr"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"685"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"field_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"enfr"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Single Line Text"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"text"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"default_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"options"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"field_order"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"required"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"field_options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"size"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"max"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"blank"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This field cannot be blank."</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"required_indicator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"invalid"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"separate_value"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"clear_on_focus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"default_blank"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"classes"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"custom_html"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;div id=</span><span class="se">\"</span><span class="s2">frm_field_[id]_container</span><span class="se">\"</span><span class="s2"> class=</span><span class="se">\"</span><span class="s2">frm_form_field form-field [required_class][error_class]</span><span class="se">\"</span><span class="s2">&gt;</span><span class="se">\r\n</span><span class="s2">    &lt;label for=</span><span class="se">\"</span><span class="s2">field_[key]</span><span class="se">\"</span><span class="s2"> class=</span><span class="se">\"</span><span class="s2">frm_primary_label</span><span class="se">\"</span><span class="s2">&gt;[field_name]</span><span class="se">\r\n</span><span class="s2">        &lt;span class=</span><span class="se">\"</span><span class="s2">frm_required</span><span class="se">\"</span><span class="s2">&gt;[required_label]&lt;/span&gt;</span><span class="se">\r\n</span><span class="s2">    &lt;/label&gt;</span><span class="se">\r\n</span><span class="s2">    [input]</span><span class="se">\r\n</span><span class="s2">    [if description]&lt;div class=</span><span class="se">\"</span><span class="s2">frm_description</span><span class="se">\"</span><span class="s2">&gt;[description]&lt;/div&gt;[/if description]</span><span class="se">\r\n</span><span class="s2">    [if error]&lt;div class=</span><span class="se">\"</span><span class="s2">frm_error</span><span class="se">\"</span><span class="s2">&gt;[error]&lt;/div&gt;[/if error]</span><span class="se">\r\n</span><span class="s2">&lt;/div&gt;"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"captcha_size"</span><span class="p">:</span><span class="w"> </span><span class="s2">"normal"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"captcha_theme"</span><span class="p">:</span><span class="w"> </span><span class="s2">"light"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"in_section"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"slide"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"form_select"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"show_hide"</span><span class="p">:</span><span class="w"> </span><span class="s2">"show"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"any_all"</span><span class="p">:</span><span class="w"> </span><span class="s2">"any"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"align"</span><span class="p">:</span><span class="w"> </span><span class="s2">"block"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"hide_field"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+            </span><span class="s2">"hide_field_cond"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"=="</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"hide_opt"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+            </span><span class="s2">"star"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"ftypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+            </span><span class="s2">"data_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"select"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"restrict"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"start_year"</span><span class="p">:</span><span class="w"> </span><span class="mi">2000</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"end_year"</span><span class="p">:</span><span class="w"> </span><span class="mi">2020</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"read_only"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"admin_only"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"attach"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"minnum"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"maxnum"</span><span class="p">:</span><span class="w"> </span><span class="mi">9999</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"delete"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"step"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"clock"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"single_time"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"start_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:00"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"end_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"23:59"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"unique"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"use_calc"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"calc"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"calc_dec"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"calc_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"dyn_default_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"multiple"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"unique_msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"autocom"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"repeat"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"add_label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Add"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"remove_label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Remove"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"conf_field"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"conf_input"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"conf_desc"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"conf_msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The entered values do not match"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"other"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"autopopulate_value"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"get_values_form"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"get_values_field"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"watch_lookup"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">""</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"get_most_recent_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"lookup_filter_current_user"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"custom_field"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"post_field"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"taxonomy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"category"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"exclude_cat"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-05 06:04:51"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 <h2 id="get-a-field-from-a-form">Get a Field from a Form</h2>
 
 <p>This endpoint will allow you to get a single field from a form.</p>
@@ -756,7 +1171,126 @@ Deleting a form with the endpoint will permanently and immediately delete the fo
 <h3 id="http-request">HTTP Request</h3>
 
 <p><code class="prettyprint">GET http://example.com/wp-json/frm/v2/forms/{formID}/fields/{fieldID}</code></p>
+<pre class="highlight shell tab-shell"><code>curl -user 95SX-LM4Z-DDTC-HP8A:x https://example.com/wp-json/frm/v2/forms/40/fields/686
+</code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="nv">$headers</span> <span class="o">=</span> <span class="k">array</span> <span class="p">(</span>
+    <span class="s1">'Authorization'</span> <span class="o">=&gt;</span> <span class="s1">'Basic '</span> <span class="o">.</span> <span class="nb">base64_encode</span><span class="p">(</span> <span class="s1">'95SX-LM4Z-DDTC-HP8A:x'</span> <span class="p">),</span>
+<span class="p">);</span>
 
+<span class="nv">$response</span> <span class="o">=</span> <span class="nx">wp_remote_request</span><span class="p">(</span> <span class="s1">'https://example.com/wp-json/frm/v2/forms/40/fields/686'</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'method'</span> <span class="o">=&gt;</span> <span class="s1">'GET'</span><span class="p">,</span>
+    <span class="s1">'headers'</span> <span class="o">=&gt;</span> <span class="nv">$headers</span>
+<span class="p">));</span>
+<span class="cp">?&gt;</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">jQuery</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+        <span class="na">beforeSend</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">xhr</span><span class="p">){</span>
+            <span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span> <span class="p">(</span><span class="s2">"Authorization"</span><span class="p">,</span> <span class="s2">"Basic "</span> <span class="o">+</span> <span class="nx">btoa</span><span class="p">(</span><span class="s2">"95SX-LM4Z-DDTC-HP8A:x"</span><span class="p">));</span>
+        <span class="p">},</span>
+        <span class="na">dataType</span><span class="p">:</span> <span class="s2">"json"</span><span class="p">,</span>
+        <span class="na">url</span><span class="p">:</span> <span class="s2">"https://example.com/jonathan/wp-json/frm/v2/forms/40/fields/686"</span><span class="p">,</span>
+        <span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">json</span><span class="p">){</span>
+            <span class="c1">//do something with the json</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">json</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+<span class="p">});</span>
+</code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"686"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"field_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"atkg5"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dropdown"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"select"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"default_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Option 1"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Option 1"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"field_order"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"required"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"field_options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"size"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"max"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"blank"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This field cannot be blank."</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"required_indicator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"invalid"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"separate_value"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"clear_on_focus"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"default_blank"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"classes"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"custom_html"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;div id=</span><span class="se">\"</span><span class="s2">frm_field_[id]_container</span><span class="se">\"</span><span class="s2"> class=</span><span class="se">\"</span><span class="s2">frm_form_field form-field [required_class][error_class]</span><span class="se">\"</span><span class="s2">&gt;</span><span class="se">\r\n</span><span class="s2">    &lt;label for=</span><span class="se">\"</span><span class="s2">field_[key]</span><span class="se">\"</span><span class="s2"> class=</span><span class="se">\"</span><span class="s2">frm_primary_label</span><span class="se">\"</span><span class="s2">&gt;[field_name]</span><span class="se">\r\n</span><span class="s2">        &lt;span class=</span><span class="se">\"</span><span class="s2">frm_required</span><span class="se">\"</span><span class="s2">&gt;[required_label]&lt;/span&gt;</span><span class="se">\r\n</span><span class="s2">    &lt;/label&gt;</span><span class="se">\r\n</span><span class="s2">    [input]</span><span class="se">\r\n</span><span class="s2">    [if description]&lt;div class=</span><span class="se">\"</span><span class="s2">frm_description</span><span class="se">\"</span><span class="s2">&gt;[description]&lt;/div&gt;[/if description]</span><span class="se">\r\n</span><span class="s2">    [if error]&lt;div class=</span><span class="se">\"</span><span class="s2">frm_error</span><span class="se">\"</span><span class="s2">&gt;[error]&lt;/div&gt;[/if error]</span><span class="se">\r\n</span><span class="s2">&lt;/div&gt;"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"captcha_size"</span><span class="p">:</span><span class="w"> </span><span class="s2">"normal"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"captcha_theme"</span><span class="p">:</span><span class="w"> </span><span class="s2">"light"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"in_section"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"slide"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"form_select"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"show_hide"</span><span class="p">:</span><span class="w"> </span><span class="s2">"show"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"any_all"</span><span class="p">:</span><span class="w"> </span><span class="s2">"any"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"align"</span><span class="p">:</span><span class="w"> </span><span class="s2">"block"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"hide_field"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="s2">"hide_field_cond"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="s2">"=="</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="s2">"hide_opt"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="s2">"star"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ftypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="s2">"data_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"select"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"restrict"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"start_year"</span><span class="p">:</span><span class="w"> </span><span class="mi">2000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"end_year"</span><span class="p">:</span><span class="w"> </span><span class="mi">2020</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"read_only"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"admin_only"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"attach"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"minnum"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"maxnum"</span><span class="p">:</span><span class="w"> </span><span class="mi">9999</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"delete"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"step"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"clock"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"single_time"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"start_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"end_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"23:59"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"unique"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"use_calc"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"calc"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"calc_dec"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"calc_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"dyn_default_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"multiple"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"unique_msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"autocom"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"repeat"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"add_label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Add"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"remove_label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Remove"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"conf_field"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"conf_input"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"conf_desc"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"conf_msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The entered values do not match"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"other"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"autopopulate_value"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"get_values_form"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"get_values_field"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"watch_lookup"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="s2">""</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="s2">"get_most_recent_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"lookup_filter_current_user"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"custom_field"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"post_field"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"taxonomy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"category"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"exclude_cat"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-05 06:04:54"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 <h2 id="delete-a-field-from-a-form">Delete a Field from a Form</h2>
 
 <p>This endpoint will allow you to delete a single field from a form.</p>
@@ -764,7 +1298,128 @@ Deleting a form with the endpoint will permanently and immediately delete the fo
 <h3 id="http-request">HTTP Request</h3>
 
 <p><code class="prettyprint">DELETE http://example.com/wp-json/frm/v2/forms/{formID}/fields/{fieldID}</code></p>
+<pre class="highlight shell tab-shell"><code>curl -user 95SX-LM4Z-DDTC-HP8A:x https://example.com/wp-json/frm/v2/forms/40/fields/686
+</code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="nv">$headers</span> <span class="o">=</span> <span class="k">array</span> <span class="p">(</span>
+    <span class="s1">'Authorization'</span> <span class="o">=&gt;</span> <span class="s1">'Basic '</span> <span class="o">.</span> <span class="nb">base64_encode</span><span class="p">(</span> <span class="s1">'95SX-LM4Z-DDTC-HP8A:x'</span> <span class="p">),</span>
+<span class="p">);</span>
 
+<span class="nv">$response</span> <span class="o">=</span> <span class="nx">wp_remote_request</span><span class="p">(</span> <span class="s1">'https://example.com/wp-json/frm/v2/forms/40/fields/686'</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'method'</span> <span class="o">=&gt;</span> <span class="s1">'GET'</span><span class="p">,</span>
+    <span class="s1">'headers'</span> <span class="o">=&gt;</span> <span class="nv">$headers</span>
+<span class="p">));</span>
+<span class="cp">?&gt;</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">jQuery</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+        <span class="na">beforeSend</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">xhr</span><span class="p">){</span>
+            <span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span> <span class="p">(</span><span class="s2">"Authorization"</span><span class="p">,</span> <span class="s2">"Basic "</span> <span class="o">+</span> <span class="nx">btoa</span><span class="p">(</span><span class="s2">"95SX-LM4Z-DDTC-HP8A:x"</span><span class="p">));</span>
+        <span class="p">},</span>
+        <span class="na">dataType</span><span class="p">:</span> <span class="s2">"json"</span><span class="p">,</span>
+    <span class="na">method</span><span class="p">:</span> <span class="s2">"DELETE"</span><span class="p">,</span>
+        <span class="na">url</span><span class="p">:</span> <span class="s2">"https://example.com/jonathan/wp-json/frm/v2/forms/40/fields/686"</span><span class="p">,</span>
+        <span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">json</span><span class="p">){</span>
+            <span class="c1">//do something with the json</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">json</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+<span class="p">});</span>
+</code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"686"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"field_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"atkg5"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dropdown"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"select"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"default_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Option 1"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Option 1"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"field_order"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"required"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"field_options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"size"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"max"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"blank"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This field cannot be blank."</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"required_indicator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"invalid"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"separate_value"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"clear_on_focus"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"default_blank"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"classes"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"custom_html"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;div id=</span><span class="se">\"</span><span class="s2">frm_field_[id]_container</span><span class="se">\"</span><span class="s2"> class=</span><span class="se">\"</span><span class="s2">frm_form_field form-field [required_class][error_class]</span><span class="se">\"</span><span class="s2">&gt;</span><span class="se">\r\n</span><span class="s2">    &lt;label for=</span><span class="se">\"</span><span class="s2">field_[key]</span><span class="se">\"</span><span class="s2"> class=</span><span class="se">\"</span><span class="s2">frm_primary_label</span><span class="se">\"</span><span class="s2">&gt;[field_name]</span><span class="se">\r\n</span><span class="s2">        &lt;span class=</span><span class="se">\"</span><span class="s2">frm_required</span><span class="se">\"</span><span class="s2">&gt;[required_label]&lt;/span&gt;</span><span class="se">\r\n</span><span class="s2">    &lt;/label&gt;</span><span class="se">\r\n</span><span class="s2">    [input]</span><span class="se">\r\n</span><span class="s2">    [if description]&lt;div class=</span><span class="se">\"</span><span class="s2">frm_description</span><span class="se">\"</span><span class="s2">&gt;[description]&lt;/div&gt;[/if description]</span><span class="se">\r\n</span><span class="s2">    [if error]&lt;div class=</span><span class="se">\"</span><span class="s2">frm_error</span><span class="se">\"</span><span class="s2">&gt;[error]&lt;/div&gt;[/if error]</span><span class="se">\r\n</span><span class="s2">&lt;/div&gt;"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"captcha_size"</span><span class="p">:</span><span class="w"> </span><span class="s2">"normal"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"captcha_theme"</span><span class="p">:</span><span class="w"> </span><span class="s2">"light"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"in_section"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"slide"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"form_select"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"show_hide"</span><span class="p">:</span><span class="w"> </span><span class="s2">"show"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"any_all"</span><span class="p">:</span><span class="w"> </span><span class="s2">"any"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"align"</span><span class="p">:</span><span class="w"> </span><span class="s2">"block"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"hide_field"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="s2">"hide_field_cond"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="s2">"=="</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="s2">"hide_opt"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="s2">"star"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ftypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="s2">"data_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"select"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"restrict"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"start_year"</span><span class="p">:</span><span class="w"> </span><span class="mi">2000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"end_year"</span><span class="p">:</span><span class="w"> </span><span class="mi">2020</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"read_only"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"admin_only"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"attach"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"minnum"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"maxnum"</span><span class="p">:</span><span class="w"> </span><span class="mi">9999</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"delete"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"step"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"clock"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"single_time"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"start_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"end_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"23:59"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"unique"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"use_calc"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"calc"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"calc_dec"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"calc_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"dyn_default_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"multiple"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"unique_msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"autocom"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"repeat"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"add_label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Add"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"remove_label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Remove"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"conf_field"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"conf_input"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"conf_desc"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"conf_msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The entered values do not match"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"other"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"autopopulate_value"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"get_values_form"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"get_values_field"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"watch_lookup"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="s2">""</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="s2">"get_most_recent_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"lookup_filter_current_user"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"custom_field"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"post_field"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"taxonomy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"category"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"exclude_cat"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"form_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"53"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-05 06:04:54"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
           <h1 id="entries">Entries</h1>
 
 <h2 id="get-all-entries">Get All Entries</h2>
