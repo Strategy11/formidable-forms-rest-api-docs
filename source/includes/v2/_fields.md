@@ -242,7 +242,7 @@ This endpoint will allow you to create a field in a form.
 `POST http://example.com/wp-json/frm/v2/forms/{formID}/fields`
 
 ```shell
-curl -user 95SX-LM4Z-DDTC-HP8A:x https://example.com/wp-json/frm/v2/forms/40/fields
+curl -user 95SX-LM4Z-DDTC-HP8A:x -X POST https://example.com/wp-json/frm/v2/forms/40/fields
 ```
 
 ```php
@@ -613,7 +613,7 @@ This endpoint will allow you to delete a single field from a form.
 `DELETE http://example.com/wp-json/frm/v2/forms/{formID}/fields/{fieldID}`
 
 ```shell
-curl -user 95SX-LM4Z-DDTC-HP8A:x https://example.com/wp-json/frm/v2/forms/40/fields/686
+curl -user 95SX-LM4Z-DDTC-HP8A:x -X DELETE https://example.com/wp-json/frm/v2/forms/40/fields/686
 ```
 
 ```php
@@ -623,7 +623,7 @@ $headers = array (
 );
 
 $response = wp_remote_request( 'https://example.com/wp-json/frm/v2/forms/40/fields/686', array(
-	'method' => 'GET',
+	'method' => 'DELETE',
 	'headers' => $headers
 ));
 ?>
