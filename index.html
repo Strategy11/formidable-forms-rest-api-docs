@@ -378,10 +378,10 @@ By default, the WP REST API supports JSONP; since the Formidable Forms API is fu
 <h3 id="http-request">HTTP Request</h3>
 
 <p><code class="prettyprint">GET https://example.com/wp-json/frm/v2/forms</code></p>
-<pre class="highlight shell tab-shell"><code>curl -user 95SX-LM4Z-DDTC-HP8A: https://example.com/wp-json/frm/v2/forms
+<pre class="highlight shell tab-shell"><code>curl -user 95SX-LM4Z-DDTC-HP8A:x https://example.com/wp-json/frm/v2/forms
 </code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 <span class="nv">$headers</span> <span class="o">=</span> <span class="k">array</span> <span class="p">(</span>
-    <span class="s1">'Authorization'</span> <span class="o">=&gt;</span> <span class="s1">'Basic '</span> <span class="o">.</span> <span class="nb">base64_encode</span><span class="p">(</span> <span class="s1">'username:password'</span> <span class="p">),</span>
+    <span class="s1">'Authorization'</span> <span class="o">=&gt;</span> <span class="s1">'Basic '</span> <span class="o">.</span> <span class="nb">base64_encode</span><span class="p">(</span> <span class="s1">'95SX-LM4Z-DDTC-HP8A:x'</span> <span class="p">),</span>
 <span class="p">);</span>
 
 <span class="nv">$response</span> <span class="o">=</span> <span class="nx">wp_remote_request</span><span class="p">(</span> <span class="s1">'https://example.com/wp-json/frm/v2/forms'</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
@@ -389,7 +389,22 @@ By default, the WP REST API supports JSONP; since the Formidable Forms API is fu
     <span class="s1">'headers'</span> <span class="o">=&gt;</span> <span class="nv">$headers</span>
 <span class="p">));</span>
 <span class="cp">?&gt;</span>
-</code></pre>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text/javascript"</span><span class="o">&gt;</span>
+    <span class="nx">jQuery</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+            <span class="na">beforeSend</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">xhr</span><span class="p">){</span>
+                <span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span> <span class="p">(</span><span class="s2">"Authorization"</span><span class="p">,</span> <span class="s2">"Basic "</span> <span class="o">+</span> <span class="nx">btoa</span><span class="p">(</span><span class="s2">"95SX-LM4Z-DDTC-HP8A:x"</span><span class="p">));</span>
+            <span class="p">},</span>
+            <span class="na">dataType</span><span class="p">:</span> <span class="s2">"json"</span><span class="p">,</span>
+            <span class="na">url</span><span class="p">:</span> <span class="s2">"https://example.com/wp-json/frm/v2/forms"</span><span class="p">,</span>
+            <span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">json</span><span class="p">){</span>
+                <span class="c1">//do something with the json</span>
+                <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">json</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">});</span>
+    <span class="p">});</span>
+<span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span></code></pre>
 <blockquote>
 <p>JSON response example:</p>
 </blockquote>
@@ -397,7 +412,7 @@ By default, the WP REST API supports JSONP; since the Formidable Forms API is fu
   </span><span class="s2">"3qshv"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"40"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"form_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3qshv"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test radio button"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Example Form"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
     </span><span class="s2">"parent_form_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"logged_in"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
@@ -486,10 +501,10 @@ By default, the WP REST API supports JSONP; since the Formidable Forms API is fu
 <p>This endpoint gets a single form.</p>
 
 <p><code class="prettyprint">GET https://example.com/wp-json/frm/v2/forms/{formID}</code></p>
-<pre class="highlight shell tab-shell"><code>curl -user 95SX-LM4Z-DDTC-HP8A: https://example.com/wp-json/frm/v2/forms/40
+<pre class="highlight shell tab-shell"><code>curl -user 95SX-LM4Z-DDTC-HP8A:x https://example.com/wp-json/frm/v2/forms/40
 </code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 <span class="nv">$headers</span> <span class="o">=</span> <span class="k">array</span> <span class="p">(</span>
-    <span class="s1">'Authorization'</span> <span class="o">=&gt;</span> <span class="s1">'Basic '</span> <span class="o">.</span> <span class="nb">base64_encode</span><span class="p">(</span> <span class="s1">'username:password'</span> <span class="p">),</span>
+    <span class="s1">'Authorization'</span> <span class="o">=&gt;</span> <span class="s1">'Basic '</span> <span class="o">.</span> <span class="nb">base64_encode</span><span class="p">(</span> <span class="s1">'95SX-LM4Z-DDTC-HP8A:x'</span> <span class="p">),</span>
 <span class="p">);</span>
 
 <span class="nv">$response</span> <span class="o">=</span> <span class="nx">wp_remote_request</span><span class="p">(</span> <span class="s1">'https://example.com/wp-json/frm/v2/forms/40'</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
@@ -536,14 +551,14 @@ By default, the WP REST API supports JSONP; since the Formidable Forms API is fu
 <p>This endpoint creates a single form.</p>
 
 <p><code class="prettyprint">POST http://example.com/wp-json/frm/v2/forms/</code></p>
-<pre class="highlight shell tab-shell"><code>curl -user 95SX-LM4Z-DDTC-HP8A: -X POST https://example.com/wp-json/frm/v2/forms
+<pre class="highlight shell tab-shell"><code>curl -user 95SX-LM4Z-DDTC-HP8A:x -X POST https://example.com/wp-json/frm/v2/forms
 </code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 <span class="nv">$headers</span> <span class="o">=</span> <span class="k">array</span> <span class="p">(</span>
-    <span class="s1">'Authorization'</span> <span class="o">=&gt;</span> <span class="s1">'Basic '</span> <span class="o">.</span> <span class="nb">base64_encode</span><span class="p">(</span> <span class="s1">'username:password'</span> <span class="p">),</span>
+    <span class="s1">'Authorization'</span> <span class="o">=&gt;</span> <span class="s1">'Basic '</span> <span class="o">.</span> <span class="nb">base64_encode</span><span class="p">(</span> <span class="s1">'95SX-LM4Z-DDTC-HP8A:x'</span> <span class="p">),</span>
 <span class="p">);</span>
 
 <span class="nv">$response</span> <span class="o">=</span> <span class="nx">wp_remote_request</span><span class="p">(</span> <span class="s1">'https://example.com/wp-json/frm/v2/forms'</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
-    <span class="s1">'method'</span> <span class="o">=&gt;</span> <span class="s1">'GET'</span><span class="p">,</span>
+    <span class="s1">'method'</span> <span class="o">=&gt;</span> <span class="s1">'POST'</span><span class="p">,</span>
     <span class="s1">'headers'</span> <span class="o">=&gt;</span> <span class="nv">$headers</span>
 <span class="p">));</span>
 <span class="cp">?&gt;</span>
@@ -606,10 +621,10 @@ By default, the WP REST API supports JSONP; since the Formidable Forms API is fu
 <aside class="warning">
 Deleting a form with the endpoint will permanently and immediately delete the form and all of it&rsquo;s fields.
 </aside>
-<pre class="highlight shell tab-shell"><code>curl -user 95SX-LM4Z-DDTC-HP8A: -X DELETE https://example.com/wp-json/frm/v2/forms/40
+<pre class="highlight shell tab-shell"><code>curl -user 95SX-LM4Z-DDTC-HP8A:x -X DELETE https://example.com/wp-json/frm/v2/forms/40
 </code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 <span class="nv">$headers</span> <span class="o">=</span> <span class="k">array</span> <span class="p">(</span>
-    <span class="s1">'Authorization'</span> <span class="o">=&gt;</span> <span class="s1">'Basic '</span> <span class="o">.</span> <span class="nb">base64_encode</span><span class="p">(</span> <span class="s1">'username:password'</span> <span class="p">),</span>
+    <span class="s1">'Authorization'</span> <span class="o">=&gt;</span> <span class="s1">'Basic '</span> <span class="o">.</span> <span class="nb">base64_encode</span><span class="p">(</span> <span class="s1">'95SX-LM4Z-DDTC-HP8A:x'</span> <span class="p">),</span>
 <span class="p">);</span>
 
 <span class="nv">$response</span> <span class="o">=</span> <span class="nx">wp_remote_request</span><span class="p">(</span> <span class="s1">'https://example.com/wp-json/frm/v2/forms/40'</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
@@ -624,7 +639,7 @@ Deleting a form with the endpoint will permanently and immediately delete the fo
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"40"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"form_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3qshv"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Example Form"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
     </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"draft"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"parent_form_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
