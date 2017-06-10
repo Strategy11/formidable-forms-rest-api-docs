@@ -45,6 +45,8 @@ jQuery(document).ready(function($) {
 });
 ```
 
+> JSON response example:
+
 ```json
 {
     "atkg5": {
@@ -263,7 +265,7 @@ jQuery(document).ready(function($) {
 			xhr.setRequestHeader ("Authorization", "Basic " + btoa("95SX-LM4Z-DDTC-HP8A:x"));
 		},
 		dataType: "json",
-    method: "POST",
+		method: "POST",
 		url: "https://example.com/jonathan/wp-json/frm/v2/forms/40/fields",
 		success: function(json){
 			//do something with the json
@@ -272,6 +274,8 @@ jQuery(document).ready(function($) {
 	});
 });
 ```
+
+> JSON response example:
 
 ```json
 {
@@ -500,6 +504,8 @@ jQuery(document).ready(function($) {
 });
 ```
 
+> JSON response example:
+
 ```json
 {
     "id": "686",
@@ -630,7 +636,7 @@ jQuery(document).ready(function($) {
 			xhr.setRequestHeader ("Authorization", "Basic " + btoa("95SX-LM4Z-DDTC-HP8A:x"));
 		},
 		dataType: "json",
-    method: "DELETE",
+		method: "DELETE",
 		url: "https://example.com/jonathan/wp-json/frm/v2/forms/40/fields/686",
 		success: function(json){
 			//do something with the json
@@ -639,6 +645,8 @@ jQuery(document).ready(function($) {
 	});
 });
 ```
+
+> JSON response example:
 
 ```json
 {
